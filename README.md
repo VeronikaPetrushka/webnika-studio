@@ -1,4 +1,4 @@
-# Veronika Web Studio
+# WebNika Studio
 
 Multilingual React service website for offering custom web development to local businesses.
 

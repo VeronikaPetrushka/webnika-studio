@@ -592,7 +592,7 @@ function App() {
             </button>
           ))}
         </div>
-        <small>© 2026 Veronika Petrushka. Built with React.</small>
+        <small>© 2026 Veronika Petrushka</small>
       </footer>
 
       {order && (

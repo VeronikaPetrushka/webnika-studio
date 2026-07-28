@@ -79,23 +79,81 @@ header {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: Manrope;
+  text-decoration: none;
 }
 
-.logo span {
-  width: 40px;
-  height: 40px;
+.logo-image {
+  width: 80px;
+  height: 80px;
   border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(145deg, var(--accent), var(--accent2));
-  color: white;
-  font-weight: 800;
+  flex-shrink: 0;
 }
 
-.logo b {
-  font-size: .92rem;
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.logo-web,
+.logo-nika {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.logo-web {
+  color: var(--text);
+}
+
+.logo-nika {
+  font-family: "Lobster", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ff6a55 0%,
+    #ff8c55 45%,
+    #ffb14d 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo-studio {
+  margin-top: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+
+  color: #d8a449;
+}
+
+.logo-studio span {
+  width: 30px;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d8a449,
+    transparent
+  );
+
+  opacity: .8;
 }
 
 nav {

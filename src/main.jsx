@@ -131,14 +131,30 @@ function App() {
     <>
       <header>
         <a className="logo" href="#top">
-          <span>WN</span>
-          <b>WebNika Studio</b>
+          <img
+            src="/android-chrome-192x192.png"
+            alt="WebNika Studio"
+            className="logo-image"
+          />
+
+          <div className="logo-text">
+            <div className="logo-brand">
+              <span className="logo-web">Web</span>
+              <span className="logo-nika">Nika</span>
+            </div>
+
+            <div className="logo-studio">
+              <span></span>
+              STUDIO
+              <span></span>
+            </div>
+          </div>
         </a>
         <nav className={menu ? "open" : ""}>
           {t.nav.map((x, i) => (
             <button
               key={x}
-              onClick={() => scroll(["services", "pricing", "portfolio", "about"][i])}
+              onClick={() => scroll(["services", "pricing", "portfolio", "about", "faq"][i])}
             >
               {x}
             </button>
@@ -471,7 +487,10 @@ function App() {
           </div>
         </section>
 
-        <section className="section faq">
+        <section 
+          id="faq" 
+          className="section faq"
+        >
           <div className="section-head">
             <span>08 / FAQ</span>
             <h2>{t.faqTitle}</h2>
@@ -526,8 +545,24 @@ function App() {
       <footer>
         <div className="footer-main">
           <a className="logo" href="#top">
-            <span>WN</span>
-            <b>WebNika Studio</b>
+            <img
+              src="/android-chrome-192x192.png"
+              alt="WebNika Studio"
+              className="logo-image"
+            />
+
+            <div className="logo-text">
+              <div className="logo-brand">
+                <span className="logo-web">Web</span>
+                <span className="logo-nika">Nika</span>
+              </div>
+
+              <div className="logo-studio">
+                <span></span>
+                STUDIO
+                <span></span>
+              </div>
+            </div>
           </a>
           <p>{t.footerText}</p>
         </div>
@@ -551,7 +586,7 @@ function App() {
           {t.nav.map((x, i) => (
             <button
               key={x}
-              onClick={() => scroll(["services", "pricing", "portfolio", "about"][i])}
+              onClick={() => scroll(["services", "pricing", "portfolio", "about", "faq"][i])}
             >
               {x}
             </button>

@@ -39,7 +39,7 @@ export const projects = [
 
 export const copy = {
   en: {
-    nav: ["Services", "Pricing", "Portfolio", "About"],
+    nav: ["Services", "Pricing", "Portfolio", "About", "FAQs"],
     contact: "Contact me",
     heroTag: "Websites for local businesses",
     heroTitle:
@@ -282,7 +282,7 @@ export const copy = {
     sent: "Your email app is ready with the project request.",
   },
   uk: {
-    nav: ["Послуги", "Ціни", "Портфоліо", "Про мене"],
+    nav: ["Послуги", "Ціни", "Портфоліо", "Про мене", "Питання"],
     contact: "Зв’язатися",
     heroTag: "Сайти для локального бізнесу",
     heroTitle:
@@ -494,7 +494,7 @@ export const copy = {
     sent: "Поштовий застосунок готовий із запитом.",
   },
   pl: {
-    nav: ["Usługi", "Cennik", "Portfolio", "O mnie"],
+    nav: ["Usługi", "Cennik", "Portfolio", "O mnie", "Pytania"],
     contact: "Kontakt",
     heroTag: "Strony dla lokalnych firm",
     heroTitle:

@@ -132,7 +132,7 @@ function App() {
       <header>
         <a className="logo" href="#top">
           <img
-            src="/android-chrome-192x192.png"
+            src={`${import.meta.env.BASE_URL}android-chrome-192x192.png`}
             alt="WebNika Studio"
             className="logo-image"
           />
@@ -546,7 +546,7 @@ function App() {
         <div className="footer-main">
           <a className="logo" href="#top">
             <img
-              src="/android-chrome-192x192.png"
+              src={`${import.meta.env.BASE_URL}android-chrome-192x192.png`}
               alt="WebNika Studio"
               className="logo-image"
             />

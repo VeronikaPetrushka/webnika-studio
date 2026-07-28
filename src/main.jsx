@@ -132,7 +132,7 @@ function App() {
       <header>
         <a className="logo" href="#top">
           <img
-            src={`${import.meta.env.BASE_URL}android-chrome-192x192.png`}
+            src={`${import.meta.env.BASE_URL}assets/android-chrome-192x192.png`}
             alt="WebNika Studio"
             className="logo-image"
           />
@@ -413,7 +413,7 @@ function App() {
         <section id="about" className="section about">
           <div className="about-photo">
             <div className="photo-ring">
-              <img src="./veronika-profile.png" alt="Veronika Petrushka" />
+              <img src="./assets/veronika-profile.png" alt="Veronika Petrushka" />
             </div>
             <div className="experience-badge">
               <strong>3</strong>
@@ -546,7 +546,7 @@ function App() {
         <div className="footer-main">
           <a className="logo" href="#top">
             <img
-              src={`${import.meta.env.BASE_URL}android-chrome-192x192.png`}
+              src={`${import.meta.env.BASE_URL}assets/android-chrome-192x192.png`}
               alt="WebNika Studio"
               className="logo-image"
             />

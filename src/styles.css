@@ -1567,6 +1567,54 @@ footer small {
   }
 }
 
+@media (max-width: 768px) {
+  .logo-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 12px;
+  }
+
+  .logo-web {
+    font-size: 1.3rem;
+  }
+
+  .logo-nika {
+    font-size: 1.3rem;
+  }
+
+  .logo-studio {
+    font-size: 0.5rem;
+    letter-spacing: 0.34em;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  .logo-studio span {
+    max-width: 22px;
+  }
+
+  footer {
+    padding: 56px 24px 28px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  footer > div {
+    width: 100%;
+  }
+
+  footer small {
+    text-align: center;
+    margin-top: 12px;
+  }
+}
+
 @media(max-width:650px) {
   .design-guidance {
     padding-top:30px

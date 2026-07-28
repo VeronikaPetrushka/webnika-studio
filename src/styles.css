@@ -80,11 +80,12 @@ header {
   display: flex;
   align-items: center;
   text-decoration: none;
+  gap: 14px;
 }
 
 .logo-image {
-  width: 80px;
-  height: 80px;
+  width: 48px;
+  height: 48px;
   border-radius: 14px;
   flex-shrink: 0;
 }

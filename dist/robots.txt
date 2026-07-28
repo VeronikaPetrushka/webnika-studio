@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veronikapetrushka.github.io/webnika-studio/sitemap.xml

@@ -1,0 +1,708 @@
+export const projects = [
+  {
+    name: "Roamly",
+    type: "Travel booking platform",
+    url: "https://veronikapetrushka.github.io/roamly-travel-app/",
+    accent: "#ef6a55",
+  },
+  {
+    name: "NovaHome",
+    type: "Real estate platform",
+    url: "https://veronikapetrushka.github.io/novahome-real-estate/",
+    accent: "#6677c8",
+  },
+  {
+    name: "Atelier Nova",
+    type: "Fashion e-commerce",
+    url: "https://veronikapetrushka.github.io/atelier-nova/",
+    accent: "#9d7965",
+  },
+  {
+    name: "Urban Thread",
+    type: "Modern clothing store",
+    url: "https://veronikapetrushka.github.io/urban-thread/",
+    accent: "#303b35",
+  },
+  {
+    name: "Mori Matcha",
+    type: "Cafe & loyalty website",
+    url: "https://veronikapetrushka.github.io/mori-matcha-cafe/",
+    accent: "#789165",
+  },
+  {
+    name: "Vantage",
+    type: "Finance dashboard",
+    url: "https://veronikapetrushka.github.io/vantage-portfolio/",
+    accent: "#5268d8",
+  },
+];
+
+export const copy = {
+  en: {
+    nav: ["Services", "Pricing", "Portfolio", "About"],
+    contact: "Contact me",
+    heroTag: "Websites for local businesses",
+    heroTitle:
+      "A website that makes your business look trusted, clear and ready to grow.",
+    heroText:
+      "I design and develop fast, modern websites for cafes, beauty studios, real estate, shops, consultants and other local businesses. I also provide clear design guidance, practical ideas and recommendations focused on what will work best for your customers and help your business become more visible through an eye-catching online presence.",
+    heroPrimary: "See packages",
+    heroSecondary: "View my work",
+    trust: "Fullstack developer · Data Science graduate · Based in Warsaw",
+    stats: [
+      "10 portfolio projects",
+      "Responsive on every device",
+      "3 languages available",
+    ],
+    servicesTitle: "Everything your business needs online.",
+    servicesSub:
+      "From a simple one-page launch to a complex platform with custom flows.",
+    serviceCards: [
+      [
+        "Business websites",
+        "Clear structure, strong calls to action and a professional look that builds trust.",
+      ],
+      [
+        "Online stores",
+        "Catalogs, product pages, cart and checkout experiences tailored to your brand.",
+      ],
+      [
+        "Custom web apps",
+        "Dashboards, booking systems, client areas, filters and interactive workflows.",
+      ],
+      [
+        "Redesign & optimization",
+        "Modernize an outdated website, improve mobile usability, speed and conversion.",
+      ],
+    ],
+    designPromiseTitle:
+      "You do not need to arrive with a finished design.",
+    designPromiseText:
+      "I can prepare the structure, visual direction and practical proposals for your website. Together we choose what will be clearest and most attractive for your customers—not only what looks fashionable.",
+    designPromisePoints: [
+      "Customer-focused page structure",
+      "Design and visual style proposals",
+      "Ideas for content and calls to action",
+      "Recommendations based on your business goals",
+    ],
+    consultationTitle:
+      "Not sure which package is right for you?",
+    consultationText:
+      "Tell me about your business and goals. I will recommend the most practical solution, explain what your website needs and prepare a free initial direction.",
+    consultationButton: "Get a free consultation",
+    pricingTitle: "Choose the right starting point.",
+    pricingSub:
+      "Transparent packages. Final scope is confirmed before development starts.",
+    plans: [
+      {
+        name: "Light",
+        price: "$399",
+        badge: "Fast launch",
+        desc: "A focused one-page website for a new or small local business.",
+        items: [
+          "1 responsive landing page",
+          "Up to 6 content sections",
+          "Contact form and social links",
+          "Basic SEO setup",
+          "Light and dark-ready design",
+          "1 revision round",
+        ],
+        eta: "5–7 days",
+      },
+      {
+        name: "Basic",
+        price: "$899",
+        badge: "Most popular",
+        desc: "A complete business website with room to explain your services and build trust.",
+        items: [
+          "2–4 custom pages",
+          "Reusable responsive design",
+          "Services and portfolio sections",
+          "Contact/order forms",
+          "Basic animations and SEO",
+          "2 revision rounds",
+        ],
+        eta: "10–14 days",
+      },
+      {
+        name: "Pro",
+        price: "From $1,699",
+        badge: "Custom build",
+        desc: "A complex website or web application with advanced functionality.",
+        items: [
+          "5+ pages or custom web app",
+          "Booking, catalog or dashboard flows",
+          "Advanced filters and interactions",
+          "API integration when required",
+          "Performance optimization",
+          "3 revision rounds",
+        ],
+        eta: "3–6 weeks",
+      },
+    ],
+    order: "Order this plan",
+    maintenanceTitle: "Keep your website healthy after launch.",
+    maintenanceSub:
+      "Choose support that matches how often your business changes.",
+    maintenance: [
+      ["One-time update", "$99", "A single content, layout or technical update."],
+      [
+        "Monthly care",
+        "$79 / month",
+        "Updates, backups, fixes and up to 2 hours of small changes monthly.",
+      ],
+      [
+        "Yearly care",
+        "$790 / year",
+        "Full-year maintenance with priority support and two months included.",
+      ],
+    ],
+    choose: "Choose maintenance",
+    portfolioTitle: "Selected work.",
+    portfolioSub:
+      "Open any project to explore the complete live experience.",
+    view: "Open live website",
+    aboutTitle: "Experience you can rely on.",
+    aboutText:
+      "I am a Fullstack developer with nearly 3 years of commercial experience. I have contributed to 100+ mobile applications, built reusable interfaces, integrated APIs and delivered production features in Agile teams. My background in Data Science helps me approach websites with both design and business logic in mind.",
+    aboutPoints: [
+      "BA with Honours in Data Science",
+      "Fullstack Developer education at GoIT",
+      "Commercial product and freelance experience",
+      "English, Ukrainian, Polish and Russian",
+    ],
+    reviewsTitle: "What clients value.",
+    reviews: [
+      [
+        "Anna K.",
+        "Beauty studio owner",
+        "Veronika understood the business quickly and turned our ideas into a clean website that customers can actually use.",
+      ],
+      [
+        "Marek P.",
+        "Local property consultant",
+        "Communication was clear, every stage was explained, and the final website looks much more professional than our old one.",
+      ],
+      [
+        "Sofia D.",
+        "Independent brand founder",
+        "The site works beautifully on mobile and the ordering flow is simple. Updates were delivered exactly as agreed.",
+      ],
+    ],
+    faqTitle: "Frequently asked questions.",
+    faqSub: "Clear answers before we start working together.",
+    faqs: [
+      [
+        "How much does a website cost?",
+        "The final price depends on the scope and functionality. Light starts at $399, Basic at $899, and Pro at $1,699. You receive a clear quote before development begins.",
+      ],
+      [
+        "How long does development take?",
+        "A Light website usually takes 5–7 days, Basic 10–14 days, and Pro projects around 3–6 weeks. Timing also depends on content delivery and feedback.",
+      ],
+      [
+        "Can you help with the design and ideas?",
+        "Yes. You do not need a finished layout. I can provide a complete visual direction, page structure, design proposals, content ideas and recommendations based on what will be easiest and most convincing for your customers.",
+      ],
+      [
+        "Can a website help make my business more recognizable?",
+        "That is one of the main goals. I create an eye-catching and professional online presence that clearly presents your value, builds trust and makes it easier for local customers to remember and contact your business.",
+      ],
+      [
+        "Can you redesign my existing website?",
+        "Yes. I can modernize the visual style, improve the mobile experience, reorganize the content, increase clarity and fix technical or performance problems.",
+      ],
+      [
+        "Will the website work on phones and tablets?",
+        "Yes. Every package includes a responsive layout tested for modern desktop, tablet and mobile screen sizes.",
+      ],
+      [
+        "Can I update the website myself later?",
+        "Yes, when content management is part of the selected solution. I can also provide a simple guideline for updating text, images, products or services.",
+      ],
+      [
+        "Do you provide maintenance after launch?",
+        "Yes. One-time, monthly and yearly support options are available for updates, fixes, backups, improvements and ongoing technical assistance.",
+      ],
+      [
+        "Will you help with the domain and hosting?",
+        "Yes. I can help select hosting, connect the domain, configure deployment and publish the completed website.",
+      ],
+      [
+        "Can you add payments, bookings or other integrations?",
+        "Yes. Depending on the project, I can integrate payments, booking forms, calendars, maps, newsletters, APIs, product catalogs and custom workflows.",
+      ],
+      [
+        "Is basic SEO included?",
+        "Yes. Projects include essential technical SEO such as semantic structure, metadata, mobile optimization, performance improvements and image optimization.",
+      ],
+      [
+        "What do you need from me before starting?",
+        "Your business goals, services, available logo or brand materials, preferred examples and any existing text or photos. When something is missing, I can suggest the structure and content direction.",
+      ],
+      [
+        "Do you work only with clients in Poland?",
+        "No. I work remotely with clients in different countries and communicate in English, Ukrainian and Polish.",
+      ],
+      [
+        "What happens after I submit the form?",
+        "I review your request and normally respond within 24 hours. We discuss the goals, suitable package, timeline and final scope before any development begins.",
+      ],
+      [
+        "Why should I work with you?",
+        "You work directly with the developer from the first idea through launch. I combine commercial software experience, frontend development, product thinking and a Data Science background to build websites that are polished, practical and aligned with business goals.",
+      ],
+    ],
+    faqCtaTitle: "Still have questions?",
+    faqCtaText:
+      "Send me a message and describe your business. I will answer your questions and suggest the best next step without obligation.",
+    faqCtaButton: "Contact me",
+    processTitle: "A clear process from idea to launch.",
+    process: [
+      ["01", "Brief", "We discuss your business, customers, goals and required functionality."],
+      ["02", "Structure & design", "I create the page structure and visual direction before development."],
+      ["03", "Development", "The responsive website is built, tested and refined."],
+      ["04", "Launch & support", "I help publish the project and can maintain it afterward."],
+    ],
+    ctaTitle: "Let’s build a website that works for your business.",
+    ctaText:
+      "Tell me what you do, what you need and when you would like to launch.",
+    ctaButton: "Start a project",
+    footerText:
+      "Custom web development for local businesses and growing brands.",
+    formTitle: "Start your project",
+    formName: "Your name",
+    formEmail: "Email",
+    formPhone: "Phone (optional)",
+    formBusiness: "Business type",
+    formMessage: "Tell me about the website you need",
+    formSend: "Send request",
+    formPlan: "Selected service",
+    close: "Close",
+    sent: "Your email app is ready with the project request.",
+  },
+  uk: {
+    nav: ["Послуги", "Ціни", "Портфоліо", "Про мене"],
+    contact: "Зв’язатися",
+    heroTag: "Сайти для локального бізнесу",
+    heroTitle:
+      "Сайт, який викликає довіру, чітко презентує бізнес і допомагає зростати.",
+    heroText:
+      "Я створюю швидкі та сучасні сайти для кафе, салонів краси, нерухомості, магазинів, консультантів та інших локальних бізнесів. Також надаю повні рекомендації щодо дизайну, структури та ідей, які найкраще працюватимуть для ваших клієнтів і допоможуть бізнесу стати помітнішим завдяки привабливій онлайн-присутності.",
+    heroPrimary: "Переглянути пакети",
+    heroSecondary: "Мої роботи",
+    trust: "React-розробниця · Випускниця Data Science · Варшава",
+    stats: ["10 проєктів у портфоліо", "Адаптація під усі пристрої", "3 мови сайту"],
+    servicesTitle: "Усе, що потрібно бізнесу онлайн.",
+    servicesSub: "Від простої односторінкової презентації до складної платформи.",
+    serviceCards: [
+      ["Сайти для бізнесу", "Зрозуміла структура, сильні заклики до дії та професійний вигляд."],
+      ["Інтернет-магазини", "Каталог, сторінки товарів, кошик і оформлення замовлення у стилі бренду."],
+      ["Вебзастосунки", "Панелі, системи бронювання, кабінети, фільтри та інтерактивні сценарії."],
+      ["Редизайн і оптимізація", "Оновлення застарілого сайту, мобільної версії, швидкості та конверсії."],
+    ],
+    designPromiseTitle:
+      "Не обов’язково приходити з готовим дизайном.",
+    designPromiseText:
+      "Я можу підготувати структуру, візуальний напрям і практичні пропозиції для сайту. Разом ми оберемо те, що буде найбільш зрозумілим і привабливим для ваших клієнтів, а не лише виглядатиме модно.",
+    designPromisePoints: [
+      "Структура сторінок з урахуванням клієнтів",
+      "Пропозиції щодо дизайну та стилю",
+      "Ідеї для контенту й закликів до дії",
+      "Рекомендації відповідно до цілей бізнесу",
+    ],
+    consultationTitle: "Не знаєте, який пакет вам підходить?",
+    consultationText:
+      "Розкажіть про свій бізнес і цілі. Я пораджу найбільш практичне рішення, поясню, що потрібно сайту, і підготую безкоштовний початковий напрям.",
+    consultationButton: "Отримати безкоштовну консультацію",
+    pricingTitle: "Оберіть відповідний формат.",
+    pricingSub: "Прозорі пакети. Остаточний обсяг узгоджується до початку роботи.",
+    plans: [
+      {
+        name: "Light",
+        price: "$399",
+        badge: "Швидкий старт",
+        desc: "Односторінковий сайт для нового або невеликого локального бізнесу.",
+        items: [
+          "1 адаптивна landing page",
+          "До 6 секцій",
+          "Форма контакту та соцмережі",
+          "Базове SEO",
+          "Сучасний дизайн",
+          "1 раунд правок",
+        ],
+        eta: "5–7 днів",
+      },
+      {
+        name: "Basic",
+        price: "$899",
+        badge: "Найпопулярніший",
+        desc: "Повноцінний бізнес-сайт для презентації послуг і формування довіри.",
+        items: [
+          "2–4 унікальні сторінки",
+          "Адаптивний дизайн",
+          "Послуги та портфоліо",
+          "Форми контакту/замовлення",
+          "Анімації та базове SEO",
+          "2 раунди правок",
+        ],
+        eta: "10–14 днів",
+      },
+      {
+        name: "Pro",
+        price: "Від $1,699",
+        badge: "Індивідуально",
+        desc: "Складний сайт або вебзастосунок з розширеним функціоналом.",
+        items: [
+          "5+ сторінок або web app",
+          "Бронювання, каталог чи dashboard",
+          "Фільтри та інтерактивність",
+          "API-інтеграції",
+          "Оптимізація швидкості",
+          "3 раунди правок",
+        ],
+        eta: "3–6 тижнів",
+      },
+    ],
+    order: "Замовити пакет",
+    maintenanceTitle: "Підтримка сайту після запуску.",
+    maintenanceSub: "Оберіть формат залежно від частоти змін.",
+    maintenance: [
+      ["Разове оновлення", "$99", "Одна зміна контенту, дизайну або технічне виправлення."],
+      ["Щомісячна підтримка", "$79 / місяць", "Оновлення, резервні копії, виправлення та до 2 годин змін."],
+      ["Річна підтримка", "$790 / рік", "Рік обслуговування з пріоритетом і двома місяцями у подарунок."],
+    ],
+    choose: "Обрати підтримку",
+    portfolioTitle: "Вибрані роботи.",
+    portfolioSub: "Відкрийте проєкт, щоб переглянути повну live-версію.",
+    view: "Відкрити сайт",
+    aboutTitle: "Досвід, якому можна довіряти.",
+    aboutText:
+      "Я Fullstack розробниця з майже 3 роками комерційного досвіду. Працювала над 100+ мобільними застосунками, створювала перевикористовувані інтерфейси, інтегрувала API та випускала production-функції в Agile-командах.",
+    aboutPoints: [
+      "Бакалавр з відзнакою у Data Science",
+      "Освіта Fullstack Developer у GoIT",
+      "Комерційний і freelance-досвід",
+      "Англійська, українська, польська та російська",
+    ],
+    reviewsTitle: "Що цінують клієнти.",
+    reviews: [
+      [
+        "Анна К.",
+        "Власниця beauty-студії",
+        "Вероніка швидко зрозуміла бізнес і перетворила наші ідеї на чистий сайт, яким клієнтам зручно користуватися.",
+      ],
+      [
+        "Марек П.",
+        "Консультант з нерухомості",
+        "Комунікація була зрозумілою, кожен етап пояснювався, а результат виглядає значно професійніше.",
+      ],
+      [
+        "Софія Д.",
+        "Засновниця бренду",
+        "Сайт чудово працює на телефоні, а процес замовлення дуже простий.",
+      ],
+    ],
+    faqTitle: "Поширені запитання.",
+    faqSub: "Зрозумілі відповіді до початку співпраці.",
+    faqs: [
+      [
+        "Скільки коштує сайт?",
+        "Фінальна ціна залежить від обсягу та функціональності. Light коштує від $399, Basic — від $899, а Pro — від $1,699. До початку розробки ви отримуєте чітку пропозицію.",
+      ],
+      [
+        "Скільки часу займає розробка?",
+        "Light зазвичай займає 5–7 днів, Basic — 10–14 днів, а Pro-проєкти — приблизно 3–6 тижнів. Термін також залежить від готовності контенту та швидкості погоджень.",
+      ],
+      [
+        "Чи можете ви допомогти з дизайном та ідеями?",
+        "Так. Готовий макет не потрібен. Я можу запропонувати повний візуальний напрям, структуру сторінок, дизайн, ідеї для контенту та рекомендації щодо того, що буде найбільш зрозумілим і переконливим для ваших клієнтів.",
+      ],
+      [
+        "Чи допоможе сайт зробити бізнес відомішим?",
+        "Це одна з головних цілей. Я створюю помітну та професійну онлайн-присутність, яка чітко показує цінність бізнесу, формує довіру й допомагає локальним клієнтам запам’ятати вас і зв’язатися.",
+      ],
+      [
+        "Чи можете ви оновити мій існуючий сайт?",
+        "Так. Я можу осучаснити стиль, покращити мобільну версію, перебудувати контент, підвищити зрозумілість і виправити технічні або швидкісні проблеми.",
+      ],
+      [
+        "Чи працюватиме сайт на телефоні та планшеті?",
+        "Так. Кожен пакет включає адаптивний дизайн для сучасних комп’ютерів, планшетів і смартфонів.",
+      ],
+      [
+        "Чи зможу я самостійно оновлювати сайт?",
+        "Так, якщо керування контентом входить до обраного рішення. Також можу надати просту інструкцію для оновлення текстів, фотографій, товарів або послуг.",
+      ],
+      [
+        "Чи надаєте ви підтримку після запуску?",
+        "Так. Доступна разова, щомісячна або річна підтримка для оновлень, виправлень, резервних копій, покращень і технічної допомоги.",
+      ],
+      [
+        "Чи допоможете ви з доменом і хостингом?",
+        "Так. Допоможу обрати хостинг, підключити домен, налаштувати публікацію та запустити готовий сайт.",
+      ],
+      [
+        "Чи можна додати оплату, бронювання або інтеграції?",
+        "Так. Залежно від проєкту можна інтегрувати оплати, бронювання, календарі, карти, розсилки, API, каталоги та індивідуальні сценарії.",
+      ],
+      [
+        "Чи входить базове SEO?",
+        "Так. Проєкти включають базове технічне SEO: семантичну структуру, метадані, мобільну оптимізацію, швидкість та оптимізацію зображень.",
+      ],
+      [
+        "Що потрібно від мене перед стартом?",
+        "Цілі бізнесу, опис послуг, логотип або фірмові матеріали, приклади сайтів, а також наявні тексти та фото. Якщо чогось немає, я запропоную структуру та напрям контенту.",
+      ],
+      [
+        "Ви працюєте лише з клієнтами з Польщі?",
+        "Ні. Я працюю віддалено з клієнтами з різних країн і спілкуюся англійською, українською та польською.",
+      ],
+      [
+        "Що відбудеться після надсилання форми?",
+        "Я перегляну запит і зазвичай відповім протягом 24 годин. Ми обговоримо цілі, пакет, терміни та остаточний обсяг до початку розробки.",
+      ],
+      [
+        "Чому варто працювати зі мною?",
+        "Ви напряму працюєте з розробницею від першої ідеї до запуску. Я поєдную комерційний досвід у розробці, frontend, продуктове мислення й освіту Data Science, щоб створювати красиві, практичні сайти, орієнтовані на бізнес-результат.",
+      ],
+    ],
+    faqCtaTitle: "Залишилися запитання?",
+    faqCtaText:
+      "Напишіть мені та коротко розкажіть про бізнес. Я відповім на запитання й без зобов’язань пораджу найкращий наступний крок.",
+    faqCtaButton: "Зв’язатися зі мною",
+    processTitle: "Зрозумілий процес від ідеї до запуску.",
+    process: [
+      ["01", "Бриф", "Обговорюємо бізнес, клієнтів, цілі та функціональність."],
+      ["02", "Структура і дизайн", "Створюю структуру сторінок та візуальний напрям."],
+      ["03", "Розробка", "Сайт розробляється, тестується та вдосконалюється."],
+      ["04", "Запуск і підтримка", "Допомагаю опублікувати проєкт і підтримувати його."],
+    ],
+    ctaTitle: "Створімо сайт, який працюватиме на ваш бізнес.",
+    ctaText: "Розкажіть, чим займаєтеся, що потрібно і коли плануєте запуск.",
+    ctaButton: "Почати проєкт",
+    footerText: "Індивідуальна веброзробка для локального бізнесу та брендів.",
+    formTitle: "Почати проєкт",
+    formName: "Ваше ім’я",
+    formEmail: "Email",
+    formPhone: "Телефон (необов’язково)",
+    formBusiness: "Тип бізнесу",
+    formMessage: "Опишіть потрібний сайт",
+    formSend: "Надіслати запит",
+    formPlan: "Обрана послуга",
+    close: "Закрити",
+    sent: "Поштовий застосунок готовий із запитом.",
+  },
+  pl: {
+    nav: ["Usługi", "Cennik", "Portfolio", "O mnie"],
+    contact: "Kontakt",
+    heroTag: "Strony dla lokalnych firm",
+    heroTitle:
+      "Strona, która buduje zaufanie, jasno pokazuje ofertę i pomaga firmie rosnąć.",
+    heroText:
+      "Projektuję i tworzę szybkie, nowoczesne strony dla kawiarni, salonów beauty, nieruchomości, sklepów, konsultantów i innych lokalnych firm. Zapewniam również pełne wskazówki dotyczące designu, struktury i pomysłów, które najlepiej sprawdzą się dla klientów oraz pomogą firmie stać się bardziej rozpoznawalną dzięki przyciągającej uwagę obecności online.",
+    heroPrimary: "Zobacz pakiety",
+    heroSecondary: "Moje realizacje",
+    trust: "Fullstack Developer · Absolwentka Data Science · Warszawa",
+    stats: ["10 projektów w portfolio", "Responsywność na każdym urządzeniu", "3 wersje językowe"],
+    servicesTitle: "Wszystko, czego firma potrzebuje online.",
+    servicesSub: "Od prostej strony one-page po rozbudowaną platformę.",
+    serviceCards: [
+      ["Strony firmowe", "Czytelna struktura, mocne CTA i profesjonalny wygląd budujący zaufanie."],
+      ["Sklepy internetowe", "Katalog, produkty, koszyk i proces zamówienia dopasowany do marki."],
+      ["Aplikacje webowe", "Panele, rezerwacje, konta klienta, filtry i interaktywne procesy."],
+      ["Redesign i optymalizacja", "Odświeżenie starej strony, mobile, szybkość i lepsza konwersja."],
+    ],
+    designPromiseTitle:
+      "Nie musisz przychodzić z gotowym projektem.",
+    designPromiseText:
+      "Mogę przygotować strukturę, kierunek wizualny i praktyczne propozycje dla strony. Wspólnie wybierzemy rozwiązania najbardziej czytelne i atrakcyjne dla klientów, a nie tylko modne.",
+    designPromisePoints: [
+      "Struktura strony dopasowana do klientów",
+      "Propozycje designu i stylu wizualnego",
+      "Pomysły na treści i wezwania do działania",
+      "Rekomendacje zgodne z celami firmy",
+    ],
+    consultationTitle: "Nie wiesz, który pakiet wybrać?",
+    consultationText:
+      "Opowiedz mi o firmie i swoich celach. Polecę najbardziej praktyczne rozwiązanie, wyjaśnię, czego potrzebuje strona, i przygotuję bezpłatny wstępny kierunek.",
+    consultationButton: "Umów bezpłatną konsultację",
+    pricingTitle: "Wybierz odpowiedni pakiet.",
+    pricingSub: "Przejrzyste pakiety. Zakres finalny potwierdzamy przed rozpoczęciem.",
+    plans: [
+      {
+        name: "Light",
+        price: "$399",
+        badge: "Szybki start",
+        desc: "Jednostronicowa witryna dla nowej lub małej lokalnej firmy.",
+        items: [
+          "1 responsywny landing page",
+          "Do 6 sekcji",
+          "Formularz i social media",
+          "Podstawowe SEO",
+          "Nowoczesny design",
+          "1 runda poprawek",
+        ],
+        eta: "5–7 dni",
+      },
+      {
+        name: "Basic",
+        price: "$899",
+        badge: "Najczęściej wybierany",
+        desc: "Kompletna strona firmowa do prezentacji usług i budowania zaufania.",
+        items: [
+          "2–4 indywidualne strony",
+          "Responsywny design",
+          "Usługi i portfolio",
+          "Formularze kontaktu/zamówienia",
+          "Animacje i SEO",
+          "2 rundy poprawek",
+        ],
+        eta: "10–14 dni",
+      },
+      {
+        name: "Pro",
+        price: "Od $1,699",
+        badge: "Indywidualny",
+        desc: "Rozbudowana strona lub aplikacja webowa z zaawansowanymi funkcjami.",
+        items: [
+          "5+ stron lub web app",
+          "Rezerwacje, katalog lub dashboard",
+          "Filtry i interakcje",
+          "Integracje API",
+          "Optymalizacja wydajności",
+          "3 rundy poprawek",
+        ],
+        eta: "3–6 tygodni",
+      },
+    ],
+    order: "Zamów pakiet",
+    maintenanceTitle: "Opieka nad stroną po wdrożeniu.",
+    maintenanceSub: "Wybierz wsparcie dopasowane do częstotliwości zmian.",
+    maintenance: [
+      ["Jednorazowa aktualizacja", "$99", "Jedna zmiana treści, layoutu lub poprawka techniczna."],
+      ["Opieka miesięczna", "$79 / miesiąc", "Aktualizacje, backupy, poprawki i do 2 godzin drobnych zmian."],
+      ["Opieka roczna", "$790 / rok", "Rok obsługi z priorytetem i dwoma miesiącami gratis."],
+    ],
+    choose: "Wybierz opiekę",
+    portfolioTitle: "Wybrane realizacje.",
+    portfolioSub: "Otwórz projekt, aby zobaczyć pełną wersję live.",
+    view: "Otwórz stronę",
+    aboutTitle: "Doświadczenie, któremu możesz zaufać.",
+    aboutText:
+      "Jestem Fullstack Developerem z prawie 3-letnim doświadczeniem komercyjnym. Pracowałam przy ponad 100 aplikacjach mobilnych, budowałam komponenty, integrowałam API i wdrażałam funkcje produkcyjne w zespołach Agile.",
+    aboutPoints: [
+      "Licencjat z wyróżnieniem z Data Science",
+      "Fullstack Developer w GoIT",
+      "Doświadczenie komercyjne i freelance",
+      "Angielski, ukraiński, polski i rosyjski",
+    ],
+    reviewsTitle: "Co doceniają klienci.",
+    reviews: [
+      [
+        "Anna K.",
+        "Właścicielka salonu beauty",
+        "Veronika szybko zrozumiała biznes i zamieniła nasze pomysły w przejrzystą, użyteczną stronę.",
+      ],
+      [
+        "Marek P.",
+        "Konsultant nieruchomości",
+        "Komunikacja była jasna, każdy etap wyjaśniony, a efekt wygląda bardzo profesjonalnie.",
+      ],
+      [
+        "Sofia D.",
+        "Założycielka marki",
+        "Strona świetnie działa na telefonie, a proces zamówienia jest bardzo prosty.",
+      ],
+    ],
+    faqTitle: "Najczęściej zadawane pytania.",
+    faqSub: "Jasne odpowiedzi przed rozpoczęciem współpracy.",
+    faqs: [
+      [
+        "Ile kosztuje strona internetowa?",
+        "Ostateczna cena zależy od zakresu i funkcjonalności. Light zaczyna się od $399, Basic od $899, a Pro od $1,699. Przed rozpoczęciem prac otrzymasz jasną wycenę.",
+      ],
+      [
+        "Ile trwa realizacja?",
+        "Strona Light zwykle zajmuje 5–7 dni, Basic 10–14 dni, a projekty Pro około 3–6 tygodni. Termin zależy również od dostarczenia treści i szybkości akceptacji.",
+      ],
+      [
+        "Czy możesz pomóc z designem i pomysłami?",
+        "Tak. Nie potrzebujesz gotowego projektu. Mogę przygotować pełny kierunek wizualny, strukturę stron, propozycje designu, pomysły na treść i rekomendacje dotyczące tego, co będzie najczytelniejsze i najbardziej przekonujące dla klientów.",
+      ],
+      [
+        "Czy strona może pomóc mojej firmie stać się bardziej rozpoznawalną?",
+        "To jeden z głównych celów. Tworzę przyciągającą uwagę i profesjonalną obecność online, która jasno prezentuje wartość firmy, buduje zaufanie i pomaga lokalnym klientom ją zapamiętać oraz łatwo się skontaktować.",
+      ],
+      [
+        "Czy możesz przeprojektować istniejącą stronę?",
+        "Tak. Mogę unowocześnić styl, poprawić wersję mobilną, uporządkować treści, zwiększyć czytelność oraz naprawić problemy techniczne i wydajnościowe.",
+      ],
+      [
+        "Czy strona będzie działać na telefonach i tabletach?",
+        "Tak. Każdy pakiet zawiera responsywny układ testowany na nowoczesnych komputerach, tabletach i smartfonach.",
+      ],
+      [
+        "Czy później mogę samodzielnie edytować stronę?",
+        "Tak, jeśli zarządzanie treścią jest częścią wybranego rozwiązania. Mogę również przygotować prostą instrukcję aktualizacji tekstów, zdjęć, produktów lub usług.",
+      ],
+      [
+        "Czy oferujesz utrzymanie strony po uruchomieniu?",
+        "Tak. Dostępna jest jednorazowa, miesięczna i roczna opieka obejmująca aktualizacje, poprawki, kopie zapasowe, ulepszenia i pomoc techniczną.",
+      ],
+      [
+        "Czy pomożesz z domeną i hostingiem?",
+        "Tak. Pomogę wybrać hosting, podłączyć domenę, skonfigurować publikację i uruchomić gotową stronę.",
+      ],
+      [
+        "Czy można dodać płatności, rezerwacje i integracje?",
+        "Tak. W zależności od projektu mogę zintegrować płatności, rezerwacje, kalendarze, mapy, newslettery, API, katalogi produktów i niestandardowe procesy.",
+      ],
+      [
+        "Czy podstawowe SEO jest wliczone?",
+        "Tak. Projekty obejmują podstawowe techniczne SEO: semantyczną strukturę, metadane, optymalizację mobilną, wydajność i optymalizację obrazów.",
+      ],
+      [
+        "Czego potrzebujesz ode mnie przed rozpoczęciem?",
+        "Celów firmy, opisu usług, dostępnego logo lub materiałów marki, przykładów stron oraz istniejących tekstów i zdjęć. Jeśli czegoś brakuje, zaproponuję strukturę i kierunek treści.",
+      ],
+      [
+        "Czy pracujesz tylko z klientami w Polsce?",
+        "Nie. Pracuję zdalnie z klientami z różnych krajów i komunikuję się po angielsku, ukraińsku oraz polsku.",
+      ],
+      [
+        "Co się stanie po wysłaniu formularza?",
+        "Przejrzę zapytanie i zwykle odpowiem w ciągu 24 godzin. Omówimy cele, odpowiedni pakiet, termin i finalny zakres przed rozpoczęciem prac.",
+      ],
+      [
+        "Dlaczego warto pracować właśnie ze mną?",
+        "Pracujesz bezpośrednio z programistką od pierwszego pomysłu do uruchomienia. Łączę komercyjne doświadczenie, frontend, myślenie produktowe i wykształcenie Data Science, aby tworzyć estetyczne, praktyczne strony zgodne z celami firmy.",
+      ],
+    ],
+    faqCtaTitle: "Masz jeszcze pytania?",
+    faqCtaText:
+      "Napisz do mnie i krótko opisz swoją firmę. Odpowiem na pytania i bez zobowiązań zaproponuję najlepszy kolejny krok.",
+    faqCtaButton: "Skontaktuj się ze mną",
+    processTitle: "Jasny proces od pomysłu do startu.",
+    process: [
+      ["01", "Brief", "Rozmawiamy o firmie, klientach, celach i funkcjach."],
+      ["02", "Struktura i design", "Tworzę strukturę strony i kierunek wizualny."],
+      ["03", "Development", "Strona jest tworzona, testowana i dopracowywana."],
+      ["04", "Wdrożenie i opieka", "Pomagam uruchomić projekt i mogę go dalej wspierać."],
+    ],
+    ctaTitle: "Zbudujmy stronę, która pracuje dla Twojej firmy.",
+    ctaText: "Napisz, czym się zajmujesz, czego potrzebujesz i kiedy chcesz wystartować.",
+    ctaButton: "Rozpocznij projekt",
+    footerText: "Indywidualne strony dla lokalnych firm i rozwijających się marek.",
+    formTitle: "Rozpocznij projekt",
+    formName: "Imię",
+    formEmail: "Email",
+    formPhone: "Telefon (opcjonalnie)",
+    formBusiness: "Rodzaj firmy",
+    formMessage: "Opisz potrzebną stronę",
+    formSend: "Wyślij zapytanie",
+    formPlan: "Wybrana usługa",
+    close: "Zamknij",
+    sent: "Aplikacja pocztowa jest gotowa z zapytaniem.",
+  },
+};

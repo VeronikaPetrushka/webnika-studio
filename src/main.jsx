@@ -33,6 +33,42 @@ function App() {
   const [formStatus, setFormStatus] = useState({ state: "idle", message: "" });
   const t = copy[lang];
 
+  const a11y = {
+    en: {
+      home: "Go to WebNika Studio homepage",
+      switchToLight: "Switch to light theme",
+      switchToDark: "Switch to dark theme",
+      openMenu: "Open navigation menu",
+      closeMenu: "Close navigation menu",
+      previousReview: "Show previous review",
+      nextReview: "Show next review",
+      closeModal: "Close contact form",
+      openProject: (name) => `Open ${name} live website in a new tab`,
+    },
+    uk: {
+      home: "Перейти на головну сторінку WebNika Studio",
+      switchToLight: "Увімкнути світлу тему",
+      switchToDark: "Увімкнути темну тему",
+      openMenu: "Відкрити меню навігації",
+      closeMenu: "Закрити меню навігації",
+      previousReview: "Показати попередній відгук",
+      nextReview: "Показати наступний відгук",
+      closeModal: "Закрити контактну форму",
+      openProject: (name) => `Відкрити сайт ${name} у новій вкладці`,
+    },
+    pl: {
+      home: "Przejdź do strony głównej WebNika Studio",
+      switchToLight: "Włącz jasny motyw",
+      switchToDark: "Włącz ciemny motyw",
+      openMenu: "Otwórz menu nawigacji",
+      closeMenu: "Zamknij menu nawigacji",
+      previousReview: "Pokaż poprzednią opinię",
+      nextReview: "Pokaż następną opinię",
+      closeModal: "Zamknij formularz kontaktowy",
+      openProject: (name) => `Otwórz stronę ${name} w nowej karcie`,
+    },
+  }[lang];
+
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
     localStorage.setItem("vp-theme", dark ? "dark" : "light");
@@ -130,10 +166,15 @@ function App() {
   return (
     <>
       <header>
-        <a className="logo" href="#top">
+        <a className="logo" href="#top" aria-label={a11y.home}>
           <img
             src={`${import.meta.env.BASE_URL}assets/android-chrome-192x192.png`}
-            alt="WebNika Studio"
+            alt=""
+            aria-hidden="true"
+            width="192"
+            height="192"
+            decoding="async"
+            fetchPriority="high"
             className="logo-image"
           />
 
@@ -150,7 +191,7 @@ function App() {
             </div>
           </div>
         </a>
-        <nav className={menu ? "open" : ""}>
+        <nav id="main-navigation" className={menu ? "open" : ""}>
           {t.nav.map((x, i) => (
             <button
               key={x}
@@ -170,14 +211,35 @@ function App() {
             <option value="uk">UA</option>
             <option value="pl">PL</option>
           </select>
-          <button className="icon-btn" onClick={() => setDark(!dark)}>
-            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          <button
+            type="button"
+            className="icon-btn"
+            onClick={() => setDark(!dark)}
+            aria-label={dark ? a11y.switchToLight : a11y.switchToDark}
+            title={dark ? a11y.switchToLight : a11y.switchToDark}
+          >
+            {dark ? (
+              <Sun size={18} aria-hidden="true" />
+            ) : (
+              <Moon size={18} aria-hidden="true" />
+            )}
           </button>
           <button className="contact-btn" onClick={() => setOrder("Custom project")}>
             {t.contact}
           </button>
-          <button className="menu-btn" onClick={() => setMenu(!menu)}>
-            {menu ? <X /> : <Menu />}
+          <button
+            type="button"
+            className="menu-btn"
+            onClick={() => setMenu(!menu)}
+            aria-label={menu ? a11y.closeMenu : a11y.openMenu}
+            aria-expanded={menu}
+            aria-controls="main-navigation"
+          >
+            {menu ? (
+              <X aria-hidden="true" />
+            ) : (
+              <Menu aria-hidden="true" />
+            )}
           </button>
         </div>
       </header>
@@ -389,6 +451,7 @@ function App() {
                     src={p.url}
                     title={`${p.name} preview`}
                     loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     tabIndex="-1"
                   />
                   <div className="preview-cover" />
@@ -400,9 +463,15 @@ function App() {
                     </small>
                     <h3>{p.name}</h3>
                   </div>
-                  <a href={p.url} target="_blank" rel="noreferrer">
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={a11y.openProject(p.name)}
+                    title={a11y.openProject(p.name)}
+                  >
                     {t.view}
-                    <ExternalLink size={16} />
+                    <ExternalLink size={16} aria-hidden="true" />
                   </a>
                 </div>
               </article>
@@ -413,7 +482,14 @@ function App() {
         <section id="about" className="section about">
           <div className="about-photo">
             <div className="photo-ring">
-              <img src="./assets/veronika-profile.png" alt="Veronika Petrushka" />
+              <img
+                src={`${import.meta.env.BASE_URL}assets/veronika-profile.png`}
+                alt="Veronika Petrushka"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="experience-badge">
               <strong>3</strong>
@@ -462,11 +538,13 @@ function App() {
           </div>
           <div className="review-box">
             <button
+              type="button"
+              aria-label={a11y.previousReview}
               onClick={() =>
                 setReview((review - 1 + t.reviews.length) % t.reviews.length)
               }
             >
-              <ChevronLeft />
+              <ChevronLeft aria-hidden="true" />
             </button>
             <div>
               <div className="stars">★★★★★</div>
@@ -480,9 +558,11 @@ function App() {
               </div>
             </div>
             <button
+              type="button"
+              aria-label={a11y.nextReview}
               onClick={() => setReview((review + 1) % t.reviews.length)}
             >
-              <ChevronRight />
+              <ChevronRight aria-hidden="true" />
             </button>
           </div>
         </section>
@@ -544,10 +624,15 @@ function App() {
 
       <footer>
         <div className="footer-main">
-          <a className="logo" href="#top">
+          <a className="logo" href="#top" aria-label={a11y.home}>
             <img
               src={`${import.meta.env.BASE_URL}assets/android-chrome-192x192.png`}
-              alt="WebNika Studio"
+              alt=""
+              aria-hidden="true"
+              width="192"
+              height="192"
+              loading="lazy"
+              decoding="async"
               className="logo-image"
             />
 
@@ -598,8 +683,13 @@ function App() {
       {order && (
         <div className="modal-backdrop" onMouseDown={() => setOrder(null)}>
           <div className="modal" onMouseDown={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setOrder(null)}>
-              <X />
+            <button
+              type="button"
+              className="modal-close"
+              onClick={() => setOrder(null)}
+              aria-label={a11y.closeModal}
+            >
+              <X aria-hidden="true" />
             </button>
             <span className="pill">
               {t.formPlan}: {order}

@@ -2,38 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>
-            https://veronikapetrushka.github.io/google8108b5e11dc186b5
+            https://veronikapetrushka.github.io/webnika-studio
         </loc>
         <lastmod>
-            2026-07-28T20:58:53.467Z
-        </lastmod>
-        <changefreq>
-            daily
-        </changefreq>
-        <priority>
-            1.0
-        </priority>
-    </url>
-    <url>
-        <loc>
-            https://veronikapetrushka.github.io/
-        </loc>
-        <lastmod>
-            2026-07-28T20:58:53.467Z
-        </lastmod>
-        <changefreq>
-            daily
-        </changefreq>
-        <priority>
-            1.0
-        </priority>
-    </url>
-    <url>
-        <loc>
-            https://veronikapetrushka.github.io/
-        </loc>
-        <lastmod>
-            2026-07-28T20:58:53.467Z
+            2026-07-28T21:10:23.421Z
         </lastmod>
         <changefreq>
             daily

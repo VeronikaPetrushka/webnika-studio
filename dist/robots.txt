@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://veronikapetrushka.github.io/sitemap.xml
+Sitemap: https://webnika-studio.vercel.app/sitemap.xml

@@ -13,26 +13,6 @@ Multilingual React service website for offering custom web development to local 
 - Functional plan ordering modal with pre-filled email request
 - Responsive navigation and layouts
 
-## Run
-```bash
-npm install
-npm run dev
-```
-
-## Build
-```bash
-npm run build
-```
-
-## Contact form setup
-
-The contact form is connected to FormSubmit and sends requests to `veronikapetrushka@gmail.com`.
-
-Important: after the first test submission, FormSubmit sends an activation email to that inbox. Open it and confirm the form once. After confirmation, future website requests will arrive directly by email. Check the Spam folder if the activation message is not visible.
-
-The form includes loading, success, error and basic anti-spam states.
-
-
 ## FAQ and conversion additions
 
 - Complete multilingual FAQ accordion

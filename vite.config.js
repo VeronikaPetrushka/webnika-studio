@@ -9,7 +9,10 @@ export default defineConfig({
     Sitemap({
       hostname: "https://webnika-studio.vercel.app",
 
-      dynamicRoutes: ["/"],
+      exclude: [
+        "/google8108b5e11dc186b5",
+        "/google8108b5e11dc186b5.html",
+      ],
 
       readable: true,
     }),

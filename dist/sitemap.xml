@@ -2,38 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>
-            https://webnika-studio.vercel.app/google8108b5e11dc186b5
-        </loc>
-        <lastmod>
-            2026-07-29T08:30:31.933Z
-        </lastmod>
-        <changefreq>
-            daily
-        </changefreq>
-        <priority>
-            1.0
-        </priority>
-    </url>
-    <url>
-        <loc>
             https://webnika-studio.vercel.app/
         </loc>
         <lastmod>
-            2026-07-29T08:30:31.933Z
-        </lastmod>
-        <changefreq>
-            daily
-        </changefreq>
-        <priority>
-            1.0
-        </priority>
-    </url>
-    <url>
-        <loc>
-            https://webnika-studio.vercel.app/
-        </loc>
-        <lastmod>
-            2026-07-29T08:30:31.933Z
+            2026-07-29T08:34:31.835Z
         </lastmod>
         <changefreq>
             daily

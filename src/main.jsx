@@ -20,6 +20,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./styles.css";
 import { projects, copy } from "./content.js";
 
@@ -748,6 +749,7 @@ function App() {
         </div>
       )}
       <Analytics />
+      <SpeedInsights />
     </>
   );
 }

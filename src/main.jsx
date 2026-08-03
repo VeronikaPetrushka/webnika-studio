@@ -19,6 +19,7 @@ import {
   Wrench,
   ExternalLink,
 } from "lucide-react";
+import { Analytics } from "@vercel/analytics/react";
 import "./styles.css";
 import { projects, copy } from "./content.js";
 
@@ -746,6 +747,7 @@ function App() {
           </div>
         </div>
       )}
+      <Analytics />
     </>
   );
 }

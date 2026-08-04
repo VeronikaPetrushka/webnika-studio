@@ -1,5 +1,23 @@
 export const projects = [
   {
+    name: "Ember Table",
+    type: "Restaurant website",
+    url: "https://veronikapetrushka.github.io/ember-table/",
+    accent: "#ef6a55",
+  },
+  {
+    name: "Sola Pilates Studio",
+    type: "Dive in pilates",
+    url: "https://veronikapetrushka.github.io/sola-pilates-studio/",
+    accent: "#ef6a55",
+  },
+  {
+    name: "Momentum Coach",
+    type: "Personal coaching website",
+    url: "https://veronikapetrushka.github.io/momentum-coach/",
+    accent: "#ef6a55",
+  },
+  {
     name: "Cozy Recipes",
     type: "Recipe Book & Blog",
     url: "https://veronikapetrushka.github.io/cozy-recipe-journal/",

@@ -32,6 +32,12 @@ function App() {
   const [order, setOrder] = useState(null);
   const [review, setReview] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
+  const [projectPage, setProjectPage] = useState(0);
+  const [projectsPerPage, setProjectsPerPage] = useState(4);
+  const [mobileProject, setMobileProject] = useState(0);
+  const [isMobilePortfolio, setIsMobilePortfolio] = useState(
+    () => window.innerWidth <= 650
+  );
   const [formStatus, setFormStatus] = useState({ state: "idle", message: "" });
   const t = copy[lang];
 
@@ -89,6 +95,33 @@ function App() {
     );
     return () => clearInterval(id);
   }, [lang]);
+
+  useEffect(() => {
+    const updateProjectsLayout = () => {
+      const width = window.innerWidth;
+
+      setIsMobilePortfolio(width <= 650);
+
+      if (width <= 650) {
+        setProjectsPerPage(projects.length);
+      } else if (width <= 1050) {
+        setProjectsPerPage(2);
+      } else {
+        setProjectsPerPage(4);
+      }
+
+      setProjectPage(0);
+      setMobileProject(0);
+    };
+
+    updateProjectsLayout();
+
+    window.addEventListener("resize", updateProjectsLayout);
+
+    return () => {
+      window.removeEventListener("resize", updateProjectsLayout);
+    };
+  }, []);
 
   const scroll = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -163,6 +196,63 @@ function App() {
             : "The form could not be sent. Please email or call me directly.",
       });
     }
+  };
+
+  const projectPageCount = Math.ceil(projects.length / projectsPerPage);
+
+const visibleProjects = projects.slice(
+  projectPage * projectsPerPage,
+  projectPage * projectsPerPage + projectsPerPage
+);
+
+const previousProjectPage = () => {
+  setProjectPage((current) =>
+    current === 0 ? projectPageCount - 1 : current - 1
+  );
+};
+
+const nextProjectPage = () => {
+  setProjectPage((current) =>
+    current === projectPageCount - 1 ? 0 : current + 1
+  );
+};
+
+const handleProjectsScroll = (event) => {
+  const slider = event.currentTarget;
+  const card = slider.querySelector(".portfolio-card");
+
+  if (!card) return;
+
+  const styles = window.getComputedStyle(slider);
+  const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+  const cardWidth = card.getBoundingClientRect().width + gap;
+
+  const nextIndex = Math.round(slider.scrollLeft / cardWidth);
+
+  setMobileProject(
+    Math.max(0, Math.min(nextIndex, projects.length - 1))
+  );
+};
+
+const scrollToMobileProject = (index) => {
+  const slider = document.querySelector(".portfolio-slider");
+
+    if (!slider) return;
+
+    const card = slider.querySelector(".portfolio-card");
+
+    if (!card) return;
+
+    const styles = window.getComputedStyle(slider);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap) || 0;
+    const cardWidth = card.getBoundingClientRect().width + gap;
+
+    slider.scrollTo({
+      left: cardWidth * index,
+      behavior: "smooth",
+    });
+
+    setMobileProject(index);
   };
 
   return (
@@ -445,38 +535,113 @@ function App() {
             <h2>{t.portfolioTitle}</h2>
             <p>{t.portfolioSub}</p>
           </div>
-          <div className="portfolio-grid">
-            {projects.map((p, i) => (
-              <article key={p.name} style={{ "--accent": p.accent }}>
-                <div className="site-preview">
-                  <iframe
-                    src={p.url}
-                    title={`${p.name} preview`}
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    tabIndex="-1"
-                  />
-                  <div className="preview-cover" />
-                </div>
-                <div className="project-info">
-                  <div>
-                    <small>
-                      0{i + 1} · {p.type}
-                    </small>
-                    <h3>{p.name}</h3>
-                  </div>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={a11y.openProject(p.name)}
-                    title={a11y.openProject(p.name)}
+          <div
+            className="portfolio-slider"
+            onScroll={handleProjectsScroll}
+          >
+            {(isMobilePortfolio ? projects : visibleProjects).map(
+              (p, index) => {
+                const realIndex = isMobilePortfolio
+                  ? index
+                  : projectPage * projectsPerPage + index;
+
+                return (
+                  <article
+                    className="portfolio-card"
+                    key={p.name}
+                    style={{ "--accent": p.accent }}
                   >
-                    {t.view}
-                    <ExternalLink size={16} aria-hidden="true" />
-                  </a>
-                </div>
-              </article>
+                    <div className="site-preview">
+                      <iframe
+                        src={p.url}
+                        title={`${p.name} preview`}
+                        loading="lazy"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        tabIndex="-1"
+                      />
+
+                      <div className="preview-cover" />
+                    </div>
+
+                    <div className="project-info">
+                      <div>
+                        <small>
+                          {String(realIndex + 1).padStart(2, "0")} · {p.type}
+                        </small>
+
+                        <h3>{p.name}</h3>
+                      </div>
+
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={a11y.openProject(p.name)}
+                        title={a11y.openProject(p.name)}
+                      >
+                        {t.view}
+
+                        <ExternalLink
+                          size={16}
+                          aria-hidden="true"
+                        />
+                      </a>
+                    </div>
+                  </article>
+                );
+              }
+            )}
+          </div>
+
+          {/* Desktop and tablet pagination */}
+          {projectPageCount > 1 && (
+            <div className="portfolio-pagination">
+              <button
+                type="button"
+                className="portfolio-pagination__arrow"
+                onClick={previousProjectPage}
+                aria-label="Previous portfolio page"
+              >
+                <ChevronLeft size={19} />
+              </button>
+
+              <div className="portfolio-pagination__pages">
+                {Array.from({ length: projectPageCount }, (_, index) => (
+                  <button
+                    type="button"
+                    key={index}
+                    className={projectPage === index ? "active" : ""}
+                    onClick={() => setProjectPage(index)}
+                    aria-label={`Show portfolio page ${index + 1}`}
+                    aria-current={projectPage === index ? "page" : undefined}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className="portfolio-pagination__arrow"
+                onClick={nextProjectPage}
+                aria-label="Next portfolio page"
+              >
+                <ChevronRight size={19} />
+              </button>
+            </div>
+          )}
+
+          {/* Phone slider dots */}
+          <div className="portfolio-mobile-dots">
+            {projects.map((project, index) => (
+              <button
+                type="button"
+                key={project.name}
+                className={mobileProject === index ? "active" : ""}
+                onClick={() => scrollToMobileProject(index)}
+                aria-label={`Show ${project.name}`}
+                aria-current={mobileProject === index ? "true" : undefined}
+              />
             ))}
           </div>
         </section>

@@ -1,5 +1,11 @@
 export const projects = [
   {
+    name: "LUMOVIE",
+    type: "Popular movies catalog",
+    url: "https://veronikapetrushka.github.io/lumovie/",
+    accent: "#ef6a55",
+  },
+  {
     name: "Ember Table",
     type: "Restaurant website",
     url: "https://veronikapetrushka.github.io/ember-table/",

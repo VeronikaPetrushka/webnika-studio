@@ -1,6 +1,6 @@
 export const projects = [
   {
-    name: "LUMOVIE",
+    name: "Lumovie",
     type: "Popular movies catalog",
     url: "https://veronikapetrushka.github.io/lumovie/",
     accent: "#ef6a55",
@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     name: "Momentum Coach",
-    type: "Personal coaching website",
+    type: "Personal trainer website",
     url: "https://veronikapetrushka.github.io/momentum-coach/",
     accent: "#ef6a55",
   },
@@ -46,12 +46,6 @@ export const projects = [
     type: "Fashion e-commerce",
     url: "https://veronikapetrushka.github.io/atelier-nova/",
     accent: "#9d7965",
-  },
-  {
-    name: "Urban Thread",
-    type: "Modern clothing store",
-    url: "https://veronikapetrushka.github.io/urban-thread/",
-    accent: "#303b35",
   },
   {
     name: "Mori Matcha",

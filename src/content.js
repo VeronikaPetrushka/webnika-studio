@@ -65,6 +65,28 @@ export const copy = {
   en: {
     nav: ["Services", "Pricing", "Portfolio", "About", "FAQs"],
     contact: "Contact me",
+    marquee: [
+      "IDEA",
+      "STRATEGY",
+      "CONCEPT",
+      "DESIGN",
+      "EXPERIENCE",
+      "DEVELOPMENT",
+      "INTEGRATION",
+      "AUTOMATION",
+      "LAUNCH",
+      "OPTIMIZATION",
+      "SUPPORT",
+      "GROWTH"
+    ],
+    marqueeDark: [
+      "FROM FIRST IDEA",
+      "TO FINAL LAUNCH",
+      "AND EVERYTHING IN BETWEEN",
+      "DESIGNED AROUND YOUR BUSINESS",
+      "BUILT FOR YOUR AUDIENCE",
+      "READY TO GROW"
+    ],
     heroTag: "Websites for local businesses",
     heroTitle:
       "A website that makes your business look trusted, clear and ready to grow.",
@@ -335,6 +357,28 @@ export const copy = {
   uk: {
     nav: ["Послуги", "Ціни", "Портфоліо", "Про мене", "Питання"],
     contact: "Зв’язатися",
+    marquee: [
+      "ІДЕЯ",
+      "СТРАТЕГІЯ",
+      "КОНЦЕПЦІЯ",
+      "ДИЗАЙН",
+      "ДОСВІД",
+      "РОЗРОБКА",
+      "ІНТЕГРАЦІЇ",
+      "АВТОМАТИЗАЦІЯ",
+      "ЗАПУСК",
+      "ОПТИМІЗАЦІЯ",
+      "ПІДТРИМКА",
+      "РОЗВИТОК"
+    ],
+    marqueeDark: [
+      "ВІД ПЕРШОЇ ІДЕЇ",
+      "ДО ФІНАЛЬНОГО ЗАПУСКУ",
+      "І ВСЬОГО, ЩО МІЖ НИМИ",
+      "СТВОРЕНО З УРАХУВАННЯМ ОСОБЛИВОСТЕЙ ВАШОГО БІЗНЕСУ",
+      "РОЗРОБЛЕНО ДЛЯ ВАШОЇ АУДИТОРІЇ",
+      "ГОТОВО ДО РОЗВИТКУ"
+    ],
     heroTag: "Сайти для локального бізнесу",
     heroTitle:
       "Сайт, який викликає довіру, чітко презентує бізнес і допомагає зростати.",
@@ -582,6 +626,29 @@ export const copy = {
   pl: {
     nav: ["Usługi", "Cennik", "Portfolio", "O mnie", "Pytania"],
     contact: "Kontakt",
+    marquee: [
+      "POMYSŁ",
+      "STRATEGIA",
+      "KONCEPCJA",
+      "DESIGN",
+      "DOŚWIADCZENIE",
+      "DEVELOPMENT",
+      "INTEGRACJE",
+      "AUTOMATYZACJA",
+      "WDROŻENIE",
+      "OPTYMALIZACJA",
+      "WSPARCIE",
+      "ROZWÓJ"
+    ],
+
+    marqueeDark: [
+      "OD PIERWSZEGO POMYSŁU",
+      "DO FINALNEGO WDROŻENIA",
+      "I WSZYSTKIEGO POMIĘDZY",
+      "ZAPROJEKTOWANE Z MYŚLĄ O TWOIM BIZNESIE",
+      "STWORZONE DLA TWOICH ODBIORCÓW",
+      "GOTOWE, BY SIĘ ROZWIJAĆ"
+    ],
     heroTag: "Strony dla lokalnych firm",
     heroTitle:
       "Strona, która buduje zaufanie, jasno pokazuje ofertę i pomaga firmie rosnąć.",

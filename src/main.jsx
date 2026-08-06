@@ -39,6 +39,7 @@ function App() {
     () => window.innerWidth <= 650
   );
   const [formStatus, setFormStatus] = useState({ state: "idle", message: "" });
+  const [scrollProgress, setScrollProgress] = useState(0);
   const t = copy[lang];
 
   const a11y = {
@@ -95,6 +96,88 @@ function App() {
     );
     return () => clearInterval(id);
   }, [lang]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    let raf = 0;
+
+    const updateScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        setScrollProgress(max > 0 ? window.scrollY / max : 0);
+        root.style.setProperty("--scroll-y", `${window.scrollY}px`);
+        root.style.setProperty("--hero-shift", `${Math.min(window.scrollY * 0.08, 70)}px`);
+      });
+    };
+
+    updateScroll();
+    window.addEventListener("scroll", updateScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", updateScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, [lang]);
+
+  useEffect(() => {
+    const onMove = (event) => {
+      const x = event.clientX / window.innerWidth - 0.5;
+      const y = event.clientY / window.innerHeight - 0.5;
+      document.documentElement.style.setProperty("--pointer-x", `${x * 24}px`);
+      document.documentElement.style.setProperty("--pointer-y", `${y * 24}px`);
+    };
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => window.removeEventListener("pointermove", onMove);
+  }, []);
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".services-grid article, .plans article, .maintenance-grid article, .portfolio-card");
+    const handlers = [];
+
+    cards.forEach((card) => {
+      const move = (event) => {
+        if (window.matchMedia("(hover: none)").matches) return;
+        const rect = card.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.setProperty("--rx", `${py * -3.5}deg`);
+        card.style.setProperty("--ry", `${px * 3.5}deg`);
+      };
+      const leave = () => {
+        card.style.setProperty("--rx", "0deg");
+        card.style.setProperty("--ry", "0deg");
+      };
+      card.addEventListener("pointermove", move);
+      card.addEventListener("pointerleave", leave);
+      handlers.push([card, move, leave]);
+    });
+
+    return () => handlers.forEach(([card, move, leave]) => {
+      card.removeEventListener("pointermove", move);
+      card.removeEventListener("pointerleave", leave);
+    });
+  }, [lang, projectPage]);
 
   useEffect(() => {
     const updateProjectsLayout = () => {
@@ -336,9 +419,13 @@ const scrollToMobileProject = (index) => {
         </div>
       </header>
 
+      <div className="scroll-progress" aria-hidden="true">
+        <span style={{ transform: `scaleX(${scrollProgress})` }} />
+      </div>
+
       <main id="top">
-        <section className="hero">
-          <div className="hero-copy">
+        <section className="hero" data-reveal="hero">
+          <div className="hero-copy hero-parallax" data-reveal>
             <span className="pill">
               <Zap size={15} />
               {t.heroTag}
@@ -359,7 +446,7 @@ const scrollToMobileProject = (index) => {
               <span>{t.trust}</span>
             </div>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual hero-parallax" data-reveal style={{ "--parallax-delay": "80ms" }}>
             <div className="browser">
               <div className="browser-top">
                 <i />
@@ -407,7 +494,21 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section id="services" className="section">
+        <div className="marquee-band" aria-label="Web design services">
+          <div className="marquee-track">
+            {Array.from({ length: 2 }).map((_, copyIndex) => (
+              <div className="marquee-row" key={copyIndex} aria-hidden={copyIndex === 1}>
+                {t.marquee.map((item, index) => (
+                  <span key={`${copyIndex}-${item}-${index}`}>
+                    {item}<i>✦</i>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <section id="services" className="section section-reveal" data-reveal>
           <div className="section-head">
             <span>01 / SERVICES</span>
             <h2>{t.servicesTitle}</h2>
@@ -427,7 +528,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section className="section design-guidance">
+        <section className="section design-guidance section-reveal" data-reveal>
           <div className="design-guidance__visual">
             <div className="guidance-window">
               <div className="guidance-window__top">
@@ -461,7 +562,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section id="pricing" className="section pricing">
+        <section id="pricing" className="section pricing section-reveal" data-reveal>
           <div className="section-head">
             <span>02 / PRICING</span>
             <h2>{t.pricingTitle}</h2>
@@ -505,7 +606,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section className="section maintenance">
+        <section className="section maintenance section-reveal" data-reveal>
           <div className="section-head">
             <span>03 / SUPPORT</span>
             <h2>{t.maintenanceTitle}</h2>
@@ -529,7 +630,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section id="portfolio" className="section portfolio">
+        <section id="portfolio" className="section portfolio section-reveal" data-reveal>
           <div className="section-head">
             <span>04 / PORTFOLIO</span>
             <h2>{t.portfolioTitle}</h2>
@@ -646,7 +747,17 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section id="about" className="section about">
+        <div className="marquee-band marquee-band--dark" aria-hidden="true">
+          <div className="marquee-track marquee-track--reverse">
+            <div className="marquee-row">
+              {t.marqueeDark.map((item, index) => (
+                <span key={`dark-${item}-${index}`}>{item}<i>✦</i></span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <section id="about" className="section about section-reveal" data-reveal>
           <div className="about-photo">
             <div className="photo-ring">
               <img
@@ -682,7 +793,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section className="section process">
+        <section className="section process section-reveal" data-reveal>
           <div className="section-head">
             <span>06 / PROCESS</span>
             <h2>{t.processTitle}</h2>
@@ -698,7 +809,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section className="section reviews">
+        <section className="section reviews section-reveal" data-reveal>
           <div className="section-head">
             <span>07 / REVIEWS</span>
             <h2>{t.reviewsTitle}</h2>
@@ -736,7 +847,8 @@ const scrollToMobileProject = (index) => {
 
         <section 
           id="faq" 
-          className="section faq"
+          className="section faq section-reveal"
+          data-reveal
         >
           <div className="section-head">
             <span>08 / FAQ</span>
@@ -777,7 +889,7 @@ const scrollToMobileProject = (index) => {
           </div>
         </section>
 
-        <section className="cta">
+        <section className="cta cta-reveal" data-reveal>
           <div>
             <h2>{t.ctaTitle}</h2>
             <p>{t.ctaText}</p>

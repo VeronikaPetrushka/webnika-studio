@@ -87,7 +87,7 @@ export const copy = {
       "BUILT FOR YOUR AUDIENCE",
       "READY TO GROW"
     ],
-    heroTag: "Websites for local businesses",
+    heroTag: "Custom web solutions for every business need",
     heroTitle:
       "A website that makes your business look trusted, clear and ready to grow.",
     heroText:
@@ -98,7 +98,7 @@ export const copy = {
     stats: [
       "10 portfolio projects",
       "Responsive on every device",
-      "3 languages available",
+      "4 languages available",
     ],
     servicesTitle: "Everything your business needs online.",
     servicesSub:
@@ -159,7 +159,7 @@ export const copy = {
           "1 revision round",
           "30 days of post-launch support",
         ],
-        eta: "5–7 days",
+        eta: "3–7 days",
       },
       {
         name: "Basic",
@@ -271,7 +271,7 @@ export const copy = {
       ],
       [
         "How long does development take?",
-        "A Light website usually takes 5–7 days, Basic 10–14 days, and Pro projects around 3–6 weeks. Timing also depends on content delivery and feedback.",
+        "A Light website usually takes 3–7 days, Basic 10–14 days, and Pro projects around 3–6 weeks. Timing also depends on content delivery and feedback.",
       ],
       [
         "Can you help with the design and ideas?",
@@ -379,7 +379,7 @@ export const copy = {
       "РОЗРОБЛЕНО ДЛЯ ВАШОЇ АУДИТОРІЇ",
       "ГОТОВО ДО РОЗВИТКУ"
     ],
-    heroTag: "Сайти для локального бізнесу",
+    heroTag: "Індивідуальні вебрішення для будь-яких потреб бізнесу",
     heroTitle:
       "Сайт, який викликає довіру, чітко презентує бізнес і допомагає зростати.",
     heroText:
@@ -387,7 +387,7 @@ export const copy = {
     heroPrimary: "Переглянути пакети",
     heroSecondary: "Мої роботи",
     trust: "React-розробниця · Випускниця Data Science · Варшава",
-    stats: ["10 проєктів у портфоліо", "Адаптація під усі пристрої", "3 мови сайту"],
+    stats: ["10 проєктів у портфоліо", "Адаптація під усі пристрої", "4 мови сайту"],
     servicesTitle: "Усе, що потрібно бізнесу онлайн.",
     servicesSub: "Від простої односторінкової презентації до складної платформи.",
     serviceCards: [
@@ -432,7 +432,7 @@ export const copy = {
           "1 раунд правок",
           "30 днів підтримки після запуску",
         ],
-        eta: "5–7 днів",
+        eta: "3–7 днів",
       },
       {
         name: "Basic",
@@ -542,7 +542,7 @@ export const copy = {
       ],
       [
         "Скільки часу займає розробка?",
-        "Light зазвичай займає 5–7 днів, Basic — 10–14 днів, а Pro-проєкти — приблизно 3–6 тижнів. Термін також залежить від готовності контенту та швидкості погоджень.",
+        "Light зазвичай займає 3–7 днів, Basic — 10–14 днів, а Pro-проєкти — приблизно 3–6 тижнів. Термін також залежить від готовності контенту та швидкості погоджень.",
       ],
       [
         "Чи можете ви допомогти з дизайном та ідеями?",
@@ -649,7 +649,7 @@ export const copy = {
       "STWORZONE DLA TWOICH ODBIORCÓW",
       "GOTOWE, BY SIĘ ROZWIJAĆ"
     ],
-    heroTag: "Strony dla lokalnych firm",
+    heroTag: "Indywidualne rozwiązania dla Twojego biznesu",
     heroTitle:
       "Strona, która buduje zaufanie, jasno pokazuje ofertę i pomaga firmie rosnąć.",
     heroText:
@@ -657,7 +657,7 @@ export const copy = {
     heroPrimary: "Zobacz pakiety",
     heroSecondary: "Moje realizacje",
     trust: "Fullstack Developer · Absolwentka Data Science · Warszawa",
-    stats: ["10 projektów w portfolio", "Responsywność na każdym urządzeniu", "3 wersje językowe"],
+    stats: ["10 projektów w portfolio", "Responsywność na każdym urządzeniu", "4 wersje językowe"],
     servicesTitle: "Wszystko, czego firma potrzebuje online.",
     servicesSub: "Od prostej strony one-page po rozbudowaną platformę.",
     serviceCards: [
@@ -702,7 +702,7 @@ export const copy = {
           "1 runda poprawek",
           "30 dni wsparcia po uruchomieniu",
         ],
-        eta: "5–7 dni",
+        eta: "3–7 dni",
       },
       {
         name: "Basic",
@@ -812,7 +812,7 @@ export const copy = {
       ],
       [
         "Ile trwa realizacja?",
-        "Strona Light zwykle zajmuje 5–7 dni, Basic 10–14 dni, a projekty Pro około 3–6 tygodni. Termin zależy również od dostarczenia treści i szybkości akceptacji.",
+        "Strona Light zwykle zajmuje 3–7 dni, Basic 10–14 dni, a projekty Pro około 3–6 tygodni. Termin zależy również od dostarczenia treści i szybkości akceptacji.",
       ],
       [
         "Czy możesz pomóc z designem i pomysłami?",

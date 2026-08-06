@@ -481,13 +481,13 @@ const scrollToMobileProject = (index) => {
             </div>
             <div className="floating-card two">
               <Globe2 />
-              3 languages
+              4 languages
             </div>
           </div>
           <div className="stats">
             {t.stats.map((s, i) => (
               <div key={s}>
-                <strong>{["10+", "100%", "EN · UA · PL"][i]}</strong>
+                <strong>{["10+", "100%", "EN · UA · PL · RU"][i]}</strong>
                 <span>{s}</span>
               </div>
             ))}

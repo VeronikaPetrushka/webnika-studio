@@ -1165,7 +1165,7 @@ img {
 .plan-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 15px;
 }
 
 .plan-card {
@@ -4351,7 +4351,7 @@ a.button,
 
   .plan-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
+    gap: 15px;
   }
 
   .plan-card,
@@ -4843,5 +4843,177 @@ a.button,
 
   .project-browser iframe {
     pointer-events: none;
+  }
+}
+
+
+/* =========================================================
+   PRICING DOTS
+   ========================================================= */
+
+/* =========================================================
+   PRICING — CIRCULAR MOBILE CAROUSEL
+   ========================================================= */
+
+.pricing-dots {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .pricing {
+    overflow: visible;
+  }
+
+  .plan-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+
+    width: calc(
+      100% +
+      2 * var(--mobile-pricing-bleed, 18px)
+    );
+
+    margin-left:
+      calc(
+        var(--mobile-pricing-bleed, 18px) * -1
+      );
+
+    gap: 22px;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline:
+      var(--mobile-pricing-side, 8%);
+
+    overscroll-behavior-x: contain;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+    padding:
+      12px
+      var(--mobile-pricing-side, 8%)
+      18px;
+
+    perspective: none;
+    transform-style: flat;
+
+    touch-action: pan-x;
+  }
+
+  .plan-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .plan-card,
+  .plan-card:last-child {
+    /*
+      82% = active card in center +
+      visible cards on both sides.
+    */
+    flex:
+      0 0
+      82%;
+
+    width: 82%;
+    min-width: 82%;
+    max-width: 82%;
+
+    grid-column:
+      auto !important;
+
+    scroll-snap-align:
+      center;
+
+    scroll-snap-stop:
+      always;
+
+    min-height:
+      auto;
+
+    transform:
+      none !important;
+
+    transition:
+      opacity .35s ease,
+      border-color .35s ease,
+      background .35s ease;
+  }
+
+  /*
+    Keep cards readable without
+    desktop tilt on touch screens.
+  */
+  .plan-card:hover,
+  .plan-card--featured {
+    transform:
+      none !important;
+  }
+
+  .plan-card > strong {
+    max-width: 100%;
+
+    overflow-wrap:
+      anywhere;
+  }
+
+  .plan-features,
+  .plan-more,
+  .plan-button {
+    width: 100%;
+  }
+
+  .pricing-dots {
+    display: flex;
+
+    justify-content:
+      center;
+
+    align-items:
+      center;
+
+    gap: 8px;
+
+    margin-top: 6px;
+  }
+
+  .pricing-dot {
+    width: 7px;
+    height: 7px;
+
+    min-width: 7px;
+    min-height: 7px;
+
+    padding: 0;
+
+    border: 0;
+
+    border-radius:
+      999px;
+
+    background:
+      var(--muted);
+
+    opacity: .32;
+
+    cursor: pointer;
+
+    transition:
+      width .3s ease,
+      opacity .3s ease,
+      background .3s ease;
+  }
+
+  .pricing-dot.is-active {
+    width: 28px;
+
+    background:
+      var(--accent);
+
+    opacity: 1;
   }
 }

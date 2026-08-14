@@ -416,11 +416,203 @@ function App() {
   const s = studioText[lang];
   const [expandedPlans, setExpandedPlans] = useState({});
 
+  const [activePlan, setActivePlan] = useState(0);
+  const planGridRef = useRef(null);
+  const pricingScrollTimer = useRef(null);
+
+  const [isMobilePricing, setIsMobilePricing] = useState(
+    () => window.innerWidth <= 700
+  );
+
+  const pricingItems = isMobilePricing
+    ? [
+        t.plans[t.plans.length - 1],
+        ...t.plans,
+        t.plans[0],
+      ]
+    : t.plans;
+
+  const getRealPlanIndex = (sliderIndex) => {
+    // Desktop / tablet: no cloned cards
+    if (!isMobilePricing) {
+      return sliderIndex;
+    }
+
+    // Mobile circular carousel
+    if (sliderIndex === 0) {
+      return t.plans.length - 1;
+    }
+
+    if (sliderIndex === pricingItems.length - 1) {
+      return 0;
+    }
+
+    return sliderIndex - 1;
+  };
+
+  const scrollToPricingCard = (
+    sliderIndex,
+    behavior = "smooth"
+  ) => {
+    const slider = planGridRef.current;
+
+    if (!slider) return;
+
+    const cards =
+      slider.querySelectorAll(".plan-card");
+
+    const card = cards[sliderIndex];
+
+    if (!card) return;
+
+    const target =
+      card.offsetLeft -
+      (slider.clientWidth - card.offsetWidth) / 2;
+
+    slider.scrollTo({
+      left: target,
+      behavior,
+    });
+  };
+
+  const goToPlan = (realIndex) => {
+    setActivePlan(realIndex);
+
+    if (!isMobilePricing) {
+      return;
+    }
+
+    scrollToPricingCard(
+      realIndex + 1
+    );
+  };
+  
+  const handlePricingScroll = () => {
+    if (!isMobilePricing) return;
+
+    const slider = planGridRef.current;
+
+    if (!slider) return;
+
+    clearTimeout(pricingScrollTimer.current);
+
+    pricingScrollTimer.current = setTimeout(() => {
+      const cards = slider.querySelectorAll(".plan-card");
+
+      const sliderCenter =
+        slider.scrollLeft +
+        slider.clientWidth / 2;
+
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const cardCenter =
+          card.offsetLeft +
+          card.offsetWidth / 2;
+
+        const distance = Math.abs(
+          sliderCenter - cardCenter
+        );
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      const lastIndex =
+        pricingItems.length - 1;
+
+      // cloned PRO → real PRO
+      if (closestIndex === 0) {
+        setActivePlan(
+          t.plans.length - 1
+        );
+
+        requestAnimationFrame(() => {
+          scrollToPricingCard(
+            t.plans.length,
+            "auto"
+          );
+        });
+
+        return;
+      }
+
+      // cloned LIGHT → real LIGHT
+      if (closestIndex === lastIndex) {
+        setActivePlan(0);
+
+        requestAnimationFrame(() => {
+          scrollToPricingCard(
+            1,
+            "auto"
+          );
+        });
+
+        return;
+      }
+
+      setActivePlan(
+        getRealPlanIndex(
+          closestIndex
+        )
+      );
+    }, 100);
+  };
+
   const a11y = useMemo(() => ({
     en: { home: "WebNika Studio home", menu: "Toggle navigation", theme: "Toggle theme", project: (name) => `Open ${name}` },
     uk: { home: "Головна WebNika Studio", menu: "Відкрити навігацію", theme: "Змінити тему", project: (name) => `Відкрити ${name}` },
     pl: { home: "Strona główna WebNika Studio", menu: "Otwórz nawigację", theme: "Zmień motyw", project: (name) => `Otwórz ${name}` },
   }[lang]), [lang]);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 700px)");
+
+    const updatePricingMode = () => {
+      setIsMobilePricing(media.matches);
+    };
+
+    updatePricingMode();
+
+    media.addEventListener("change", updatePricingMode);
+
+    return () => {
+      media.removeEventListener("change", updatePricingMode);
+    };
+  }, []);
+
+  useEffect(() => {
+    const slider = planGridRef.current;
+
+    if (!slider) return;
+
+    // Desktop/tablet must behave as normal grid
+    if (!isMobilePricing) {
+      slider.scrollLeft = 0;
+      return;
+    }
+
+    const frame =
+      requestAnimationFrame(() => {
+        // Index 0 is cloned PRO,
+        // index 1 is the real LIGHT.
+        scrollToPricingCard(
+          1,
+          "auto"
+        );
+      });
+
+    return () => {
+      cancelAnimationFrame(frame);
+
+      clearTimeout(
+        pricingScrollTimer.current
+      );
+    };
+  }, [isMobilePricing, lang]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
@@ -900,44 +1092,153 @@ function App() {
             <p>{t.pricingSub}</p>
             <ThreeMicroScene variant="pricing" />
           </div>
-          <div className="plan-grid" data-reveal data-reveal-style="lift">
-            {t.plans.map((plan, index) => (
-              <article key={plan.name} className={index === 1 ? "plan-card plan-card--featured" : "plan-card"} data-cursor="SELECT PLAN">
-                <div className="plan-head"><span>0{index + 1}</span><small>{plan.badge}</small></div>
-                <h3>{plan.name}</h3><strong>{plan.price}</strong><p>{plan.desc}</p>
-                <div className="plan-eta">TIMELINE <b>{plan.eta}</b></div>
-                <ul className="plan-features">
-                  {(expandedPlans[plan.name]
-                    ? plan.items
-                    : plan.items.slice(0, 7)
-                  ).map((item) => (
-                    <li key={item}>
-                      <Check size={15} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div
+            className="plan-grid"
+            ref={planGridRef}
+            onScroll={
+              isMobilePricing
+                ? handlePricingScroll
+                : undefined
+            }
+            data-reveal
+            data-reveal-style="lift"
+          >
+            {pricingItems.map(
+              (plan, sliderIndex) => {
+                const realIndex =
+                  getRealPlanIndex(sliderIndex);
 
-                {plan.items.length > 7 && (
-                  <button
-                    type="button"
-                    className="plan-more"
-                    onClick={() =>
-                      setExpandedPlans((prev) => ({
-                        ...prev,
-                        [plan.name]: !prev[plan.name],
-                      }))
+                const isFeatured =
+                  realIndex === 1;
+
+                return (
+                  <article
+                    key={`${plan.name}-${sliderIndex}`}
+                    className={
+                      isFeatured
+                        ? "plan-card plan-card--featured"
+                        : "plan-card"
                     }
+                    data-cursor="SELECT PLAN"
+                    data-plan-index={realIndex}
                   >
-                    {expandedPlans[plan.name]
-                      ? "Show less"
-                      : `View all ${plan.items.length} features`}
-                    <span>{expandedPlans[plan.name] ? "↑" : "↓"}</span>
-                  </button>
-                )}
-                <MagneticButton className="plan-button" onClick={() => setOrder(`${plan.name} — ${plan.price}`)}>{t.order}<ArrowRight size={16} /></MagneticButton>
-              </article>
-            ))}
+                    <div className="plan-head">
+                      <span>
+                        0{realIndex + 1}
+                      </span>
+
+                      <small>
+                        {plan.badge}
+                      </small>
+                    </div>
+
+                    <h3>{plan.name}</h3>
+
+                    <strong>
+                      {plan.price}
+                    </strong>
+
+                    <p>{plan.desc}</p>
+
+                    <div className="plan-eta">
+                      <span>TIMELINE</span>
+
+                      <b>{plan.eta}</b>
+                    </div>
+
+                    <ul className="plan-features">
+                      {(expandedPlans[plan.name]
+                        ? plan.items
+                        : plan.items.slice(0, 7)
+                      ).map((item) => (
+                        <li key={item}>
+                          <Check size={15} />
+
+                          <span>
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {plan.items.length > 7 && (
+                      <button
+                        type="button"
+                        className="plan-more"
+                        onClick={(event) => {
+                          event.stopPropagation();
+
+                          setExpandedPlans(
+                            (prev) => ({
+                              ...prev,
+
+                              [plan.name]:
+                                !prev[
+                                  plan.name
+                                ],
+                            })
+                          );
+                        }}
+                      >
+                        <span>
+                          {expandedPlans[
+                            plan.name
+                          ]
+                            ? "Show less"
+                            : `View all ${plan.items.length} features`}
+                        </span>
+
+                        <span className="plan-more-arrow">
+                          {expandedPlans[
+                            plan.name
+                          ]
+                            ? "↑"
+                            : "↓"}
+                        </span>
+                      </button>
+                    )}
+
+                    <MagneticButton
+                      className="plan-button"
+                      onClick={() =>
+                        setOrder(
+                          `${plan.name} — ${plan.price}`
+                        )
+                      }
+                    >
+                      {t.order}
+
+                      <ArrowRight size={16} />
+                    </MagneticButton>
+                  </article>
+                );
+              }
+            )}
+          </div>
+
+          <div className="pricing-dots">
+            {t.plans.map(
+              (plan, index) => (
+                <button
+                  key={plan.name}
+                  type="button"
+                  className={
+                    activePlan === index
+                      ? "pricing-dot is-active"
+                      : "pricing-dot"
+                  }
+                  onClick={() =>
+                    goToPlan(index)
+                  }
+                  aria-label={`Show ${plan.name} plan`}
+                  aria-current={
+                    activePlan === index
+                      ? "true"
+                      : undefined
+                  }
+                />
+              )
+            )}
           </div>
           <div className="consultation-strip" data-reveal data-reveal-style="scale">
             <div><small>{s.unsure}</small><h3>{t.consultationTitle}</h3><p>{t.consultationText}</p></div>

@@ -1,23 +1,16 @@
 {
-  "name": "WebNika Studio",
+  "name": "WebNika Studio — Custom Websites",
   "short_name": "WebNika",
-  "start_url": "/webnika-studio/",
-  "scope": "/webnika-studio/",
+  "description": "Custom web design and development for local businesses and growing brands.",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ef7b57",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "lang": "en",
   "icons": [
-    {
-      "src": "/web-app-manifest-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
+    { "src": "/assets/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }

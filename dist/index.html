@@ -1,260 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0e14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e6e8ec" media="(prefers-color-scheme: light)" />
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E619FD5NV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-6E619FD5NV');
     </script>
 
-    <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
-    <!-- Primary SEO -->
-    <title>WebNika Studio — Professional Web Design & Development</title>
-
+    <title>WebNika Studio — Custom Websites for Businesses | Warsaw</title>
     <meta
       name="description"
-      content="Professional website design and development for local businesses. WebNika Studio creates modern, responsive websites for cafés, beauty salons, real estate agencies, shops and other growing brands."
+      content="WebNika Studio designs and builds custom websites, online stores and web apps for local businesses and growing brands. Strategy, design, development and launch by one developer. Warsaw, remote worldwide."
     />
+    <meta name="author" content="Veronika Petrushka" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://webnika-studio.vercel.app/" />
 
     <meta
       name="keywords"
-      content="
-        WebNika Studio,
-        WebNika,
-        website development,
-        web development,
-        web design,
-        custom website,
-        business website,
-        small business website,
-        landing page,
-        responsive website,
-        React developer,
-        freelance web developer,
-        website developer,
-        website developer Poland,
-        website developer Warsaw,
-        website design Poland,
-        website design Warsaw,
-
-        strony internetowe,
-        tworzenie stron internetowych,
-        projektowanie stron internetowych,
-        wykonanie strony internetowej,
-        strony dla firm,
-        strony internetowe Warszawa,
-        strony internetowe Polska,
-        tworzenie stron Warszawa,
-        web developer Warszawa,
-
-        створення сайтів,
-        створення сайту,
-        розробка сайтів,
-        розробка вебсайтів,
-        розробка веб сайтів,
-        веб-розробник,
-        веб розробник,
-        веб-дизайн,
-        веб дизайн,
-        створення лендінгу,
-        створення лендингу,
-        сайт для бізнесу,
-        сайт для компанії,
-        сайт під ключ,
-        створення сайту Україна,
-        створення сайту Варшава,
-        створення сайтів Україна,
-        створення сайтів Варшава,
-        розробка сайтів Україна,
-        розробка сайтів Варшава,
-
-        создание сайтов,
-        создание сайта,
-        разработка сайтов,
-        разработка сайта,
-        веб-разработка,
-        веб разработка,
-        веб-дизайн,
-        веб дизайн,
-        разработчик сайтов,
-        веб разработчик,
-        создание лендинга,
-        сайт для бизнеса,
-        сайт под ключ,
-        создание сайта Украина,
-        создание сайтов Украина,
-        разработка сайтов Украина
-      "
-    />
-
-    <meta name="author" content="Veronika Petrushka" />
-
-    <meta
-      name="robots"
-      content="index,follow,max-image-preview:large"
+      content="WebNika Studio, custom website, business website, web design Warsaw, web development Poland, landing page, online store, web application, React developer, freelance web developer, tworzenie stron internetowych, strony internetowe Warszawa, projektowanie stron, створення сайтів, розробка сайтів, веб-дизайн, сайт для бізнесу"
     />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WebNika Studio" />
+    <meta property="og:title" content="WebNika Studio — Custom Websites for Businesses" />
+    <meta property="og:description" content="Scattered ideas, given form. Custom websites, online stores and web apps — strategy through launch, by one developer." />
+    <meta property="og:url" content="https://webnika-studio.vercel.app/" />
+    <meta property="og:image" content="https://webnika-studio.vercel.app/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="WebNika Studio — custom websites for local businesses" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="pl_PL" />
+    <meta property="og:locale:alternate" content="uk_UA" />
 
-    <meta
-    property="og:title"
-    content="WebNika Studio — Professional Web Design & Development"
-    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="WebNika Studio — Custom Websites for Businesses" />
+    <meta name="twitter:description" content="Scattered ideas, given form. Strategy, design, development and launch by one developer." />
+    <meta name="twitter:image" content="https://webnika-studio.vercel.app/assets/social-preview.png" />
 
-    <meta
-    property="og:description"
-    content="Modern, fast and responsive websites for local businesses and growing brands."
-    />
+    <link rel="icon" href="/assets/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <meta
-    property="og:url"
-    content="https://webnika-studio.vercel.app/"
-    />
-
-    <meta
-    property="og:image"
-    content="https://webnika-studio.vercel.app/assets/social-preview.png"
-    />
-
-    <meta
-    property="og:image:width"
-    content="1200"
-    />
-
-    <meta
-    property="og:image:height"
-    content="630"
-    />
-
-    <meta
-    property="og:image:alt"
-    content="WebNika Studio — custom websites for local businesses"
-    />
-
-    <meta
-    name="twitter:card"
-    content="summary_large_image"
-    />
-
-    <meta
-    name="twitter:title"
-    content="WebNika Studio — Professional Web Design & Development"
-    />
-
-    <meta
-    name="twitter:description"
-    content="Modern, fast and responsive websites for local businesses and growing brands."
-    />
-
-    <meta
-    name="twitter:image"
-    content="https://webnika-studio.vercel.app/assets/social-preview.png"
-    />
-
+    <!-- Type system: Archivo (variable width + weight) carries the voice,
+         Instrument Serif is the single human word, JetBrains Mono is the
+         instrument readout. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link
-      rel="icon"
-      href="https://webnika-studio.vercel.app/assets/favicon.ico"
-      sizes="any"
-    />
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon-16x16.png"
-    />
-
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon-32x32.png"
-    />
-
-    <link
-      rel="apple-touch-icon"
-      href="/assets/apple-touch-icon.png"
-    />
-
-    <link
-      rel="manifest"
-      href="/site.webmanifest"
-    />
-
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap"
     />
+
+    <style>
+      /* Paint the stage before the bundle arrives so there is never a
+         white flash between the HTML and the preloader. */
+      html { background: #0b0e14; }
+      html[data-theme="light"] { background: #e6e8ec; }
+      #boot {
+        position: fixed;
+        inset: 0;
+        background: #070910;
+        display: grid;
+        place-items: center;
+      }
+      html[data-theme="light"] #boot { background: #d5d9e0; }
+      #boot i {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 122, 26, 0.9);
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        animation: bootSpin 1s linear infinite;
+      }
+      @keyframes bootSpin { to { transform: rotate(360deg); } }
+      #root:not(:empty) + #boot { display: none; }
+    </style>
+
+    <script>
+      /* Apply the stored theme before first paint — no flash of the
+         wrong palette on reload. */
+      (function () {
+        try {
+          var stored = localStorage.getItem("wn-theme");
+          document.documentElement.dataset.theme = stored === "light" ? "light" : "dark";
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "@id": "https://webnika-studio.vercel.app/#business",
-
         "name": "WebNika Studio",
-
+        "alternateName": "WebNika",
         "url": "https://webnika-studio.vercel.app/",
-
-        "logo": "https://webnika-studio.vercel.app/assets/android-chrome-512x512.png",
-
+        "logo": "https://webnika-studio.vercel.app/assets/web-app-manifest-512x512.png",
         "image": "https://webnika-studio.vercel.app/assets/social-preview.png",
-
-        "description": "WebNika Studio creates modern, responsive websites and landing pages for local businesses and professionals.",
-
+        "description": "WebNika Studio designs and builds custom websites, online stores and web applications for local businesses and growing brands.",
         "email": "veronikapetrushka@gmail.com",
-
         "telephone": "+48509334229",
-
+        "priceRange": "$399–$5000",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Warsaw",
           "addressCountry": "PL"
         },
-
-        "areaServed": {
-          "@type": "Country",
-          "name": "Poland"
-        },
-
-        "founder": {
-          "@type": "Person",
-          "name": "Veronika Petrushka"
-        },
-
-        "sameAs": [
-          "https://github.com/veronikapetrushka"
-        ]
+        "areaServed": [
+          { "@type": "Country", "name": "Poland" },
+          { "@type": "Country", "name": "Ukraine" },
+          { "@type": "Place", "name": "Worldwide (remote)" }
+        ],
+        "availableLanguage": ["English", "Polish", "Ukrainian", "Russian"],
+        "founder": { "@type": "Person", "name": "Veronika Petrushka", "jobTitle": "Fullstack Developer" },
+        "sameAs": ["https://github.com/veronikapetrushka"],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Website packages",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Light — one-page website", "price": "399", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Basic — multi-page business website", "price": "899", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "Pro — custom website or web application", "price": "1699", "priceCurrency": "USD" }
+          ]
+        }
       }
-      </script>
-    <script type="module" crossorigin src="/assets/index-DME8fUR2.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CfNDw0ng.css">
+    </script>
+    <script type="module" crossorigin src="/assets/index-wTQqTNTK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Ch_ln8rP.css">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   </head>
 
   <body>
     <div id="root"></div>
-
+    <div id="boot"><i></i></div>
   </body>
 </html>

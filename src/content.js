@@ -45,16 +45,17 @@ export const chapters = [
 ];
 
 export const projects = [
-  { key: "lumovie", name: "Lumovie", url: "https://veronikapetrushka.github.io/lumovie/", accent: "#ef6a55", year: "2025", stack: "React · TMDB API" },
-  { key: "ember", name: "Ember Table", url: "https://veronikapetrushka.github.io/ember-table/", accent: "#e5533d", year: "2025", stack: "React · Booking flow" },
-  { key: "sola", name: "Sola Pilates Studio", url: "https://veronikapetrushka.github.io/sola-pilates-studio/", accent: "#c8956d", year: "2025", stack: "React · Schedule UI" },
-  { key: "momentum", name: "Momentum Coach", url: "https://veronikapetrushka.github.io/momentum-coach/", accent: "#ff8a3d", year: "2025", stack: "React · Lead capture" },
-  { key: "cozy", name: "Cozy Recipes", url: "https://veronikapetrushka.github.io/cozy-recipe-journal/", accent: "#d98b4a", year: "2025", stack: "React · Content model" },
-  { key: "roamly", name: "Roamly", url: "https://veronikapetrushka.github.io/roamly-travel-app/", accent: "#6bb7c8", year: "2025", stack: "React · Search & filters" },
-  { key: "novahome", name: "NovaHome", url: "https://veronikapetrushka.github.io/novahome-real-estate/", accent: "#6677c8", year: "2025", stack: "React · Listings engine" },
-  { key: "atelier", name: "Atelier Nova", url: "https://veronikapetrushka.github.io/atelier-nova/", accent: "#9d7965", year: "2025", stack: "React · Cart & checkout" },
-  { key: "mori", name: "Mori Matcha", url: "https://veronikapetrushka.github.io/mori-matcha-cafe/", accent: "#789165", year: "2025", stack: "React · Loyalty flow" },
-  { key: "vantage", name: "Vantage", url: "https://veronikapetrushka.github.io/vantage-portfolio/", accent: "#5268d8", year: "2025", stack: "React · Data viz" },
+  { key: "mori-2.0", name: "Mori Matcha 2.0", url: "https://veronikapetrushka.github.io/mori-matcha-cafe-2.0/", accent: "#789165", year: "2026", stack: "React + Three.js · Redesign" },
+  { key: "lumovie", name: "Lumovie", url: "https://veronikapetrushka.github.io/lumovie/", accent: "#ef6a55", year: "2026", stack: "React · TMDB API" },
+  { key: "ember", name: "Ember Table", url: "https://veronikapetrushka.github.io/ember-table/", accent: "#e5533d", year: "2026", stack: "React · Booking flow" },
+  { key: "momentum", name: "Momentum Coach", url: "https://veronikapetrushka.github.io/momentum-coach/", accent: "#ff8a3d", year: "2026", stack: "React · Lead capture" },
+  { key: "sola", name: "Sola Pilates Studio", url: "https://veronikapetrushka.github.io/sola-pilates-studio/", accent: "#c8956d", year: "2026", stack: "React · Schedule UI" },
+  { key: "novahome", name: "NovaHome", url: "https://veronikapetrushka.github.io/novahome-real-estate/", accent: "#6677c8", year: "2026", stack: "React · Listings engine" },
+  { key: "cozy", name: "Cozy Recipes", url: "https://veronikapetrushka.github.io/cozy-recipe-journal/", accent: "#d98b4a", year: "2026", stack: "React · Content model" },
+  { key: "roamly", name: "Roamly", url: "https://veronikapetrushka.github.io/roamly-travel-app/", accent: "#6bb7c8", year: "2026", stack: "React · Search & filters" },
+  { key: "atelier", name: "Atelier Nova", url: "https://veronikapetrushka.github.io/atelier-nova/", accent: "#9d7965", year: "2026", stack: "React · Cart & checkout" },
+  { key: "mori", name: "Mori Matcha", url: "https://veronikapetrushka.github.io/mori-matcha-cafe/", accent: "#789165", year: "2026", stack: "React · Loyalty flow" },
+  { key: "vantage", name: "Vantage", url: "https://veronikapetrushka.github.io/vantage-portfolio/", accent: "#5268d8", year: "2026", stack: "React · Data viz" },
 ];
 
 /* ================================================================

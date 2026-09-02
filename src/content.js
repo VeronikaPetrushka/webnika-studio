@@ -45,6 +45,7 @@ export const chapters = [
 ];
 
 export const projects = [
+  { key: "domivka", name: "Domivka Candles", url: "https://domivka-candles.up.railway.app/", accent: "#eb95dd", year: "2026", stack: "React + Node.js · E-commerce + Admin" },
   { key: "mori-2.0", name: "Mori Matcha 2.0", url: "https://veronikapetrushka.github.io/mori-matcha-cafe-2.0/", accent: "#789165", year: "2026", stack: "React + Three.js · Redesign" },
   { key: "lumovie", name: "Lumovie", url: "https://veronikapetrushka.github.io/lumovie/", accent: "#ef6a55", year: "2026", stack: "React · TMDB API" },
   { key: "ember", name: "Ember Table", url: "https://veronikapetrushka.github.io/ember-table/", accent: "#e5533d", year: "2026", stack: "React · Booking flow" },

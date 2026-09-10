@@ -45,6 +45,7 @@ export const chapters = [
 ];
 
 export const projects = [
+  { key: "6studio", name: "6.Studio", url: "https://6-studio.vercel.app/", accent: "#55b4df", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin" },
   { key: "esther", name: "Now.Esther", url: "https://esther-candles.vercel.app/", accent: "#715837", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin" },
   { key: "alice-in-ualand", name: "Alice in UALand", url: "https://alice-in-ualand.vercel.app/", accent: "#245d30", year: "2026", stack: "React + Node.js · E-commerce + Admin" },
   { key: "domivka", name: "Domivka Candles", url: "https://domivka-candles.up.railway.app/", accent: "#eb95dd", year: "2026", stack: "React + Node.js · E-commerce + Admin" },

@@ -531,7 +531,7 @@ function App() {
         <Studio t={t} onStart={() => startProject("Custom project")} portrait={PORTRAIT} />
         <Signals t={t} />
         <Faq t={t} onStart={() => startProject("Custom project")} />
-        <Launch t={t} onStart={() => startProject("Custom project")} email={contact.email} />
+        <Launch t={t} onStart={() => startProject("Custom project")} email={contact.email} booking={contact.booking} />
       </main>
 
       <footer className="footer">

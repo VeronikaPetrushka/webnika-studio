@@ -395,7 +395,7 @@ shapes.slice(1).forEach(([code, other]) => {
 
 Object.entries(content.copy).forEach(([code, value]) => {
   const plans = value.pricing.plans.map((p) => p.key).join(",");
-  if (plans !== "light,basic,pro") bad(`${code}: unexpected plan keys (${plans})`);
+  if (plans !== "launch,studio,system") bad(`${code}: unexpected plan keys (${plans})`);
 });
 ok("plan keys aligned across languages");
 

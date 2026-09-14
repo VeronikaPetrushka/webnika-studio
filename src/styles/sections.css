@@ -558,6 +558,76 @@
 
 .work__meta a:hover { color: var(--accent); gap: 12px; }
 
+/* --- Client work vs concept builds -------------------------------
+   The badge is load-bearing. A visitor who mistakes a concept build
+   for a client project and then notices the github.io URL has just
+   learned not to trust the rest of the page. Say which is which. */
+
+.work__groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-5);
+  margin-bottom: var(--s-4);
+}
+
+.work__group {
+  display: grid;
+  gap: 4px;
+  max-width: 42ch;
+}
+
+.work__group > span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.work__group.is-client > span { color: var(--accent); }
+
+.work__groupnote {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-3);
+}
+
+.work__badge {
+  justify-self: start;
+  font-family: var(--font-mono);
+  font-size: 0.54rem;
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--text-3);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 2px 7px;
+}
+
+.work__badge.is-client {
+  color: var(--on-accent);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.work__client {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+/* The one line that sells: a measured fact, never an adjective. */
+.work__outcome {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text);
+  border-left: 2px solid var(--accent-2);
+  padding-left: 10px;
+  margin: 2px 0 0;
+}
+
 .work__end {
   display: grid;
   align-content: center;
@@ -778,6 +848,17 @@
   font-variation-settings: "wdth" 118;
   letter-spacing: -0.045em;
   line-height: 0.95;
+}
+
+/* Payment terms sit directly under the number, where the objection
+   forms. "Fixed" and "40 / 40 / 20" answer it before it is spoken. */
+.plan__note {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 6px;
 }
 
 .plan__for { font-size: 0.88rem; line-height: 1.5; color: var(--accent-2); }
@@ -1197,6 +1278,17 @@
   text-transform: uppercase;
   color: var(--text-3);
 }
+
+/* A testimonial that links to a real business is worth six that do not. */
+.quote__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent-2);
+  transition: color var(--t-hover) var(--e-soft);
+}
+
+.quote__link:hover { color: var(--accent); }
 
 .quote__nav { display: flex; align-items: center; gap: var(--s-3); }
 

@@ -27,6 +27,12 @@ export const contact = {
   city: "Warsaw, Poland",
   github: "https://github.com/veronikapetrushka",
   endpoint: "https://formsubmit.co/ajax/21f8a6c0d50d9b386b6b2cedd3034dcc",
+
+  /* Paste a 15-minute booking link here (Cal.com, Calendly, SavvyCal) and a
+     "Book 15 minutes" button appears beside every primary CTA. A form asks the
+     visitor to compose an email, which is work; a calendar asks for one click.
+     Leave it empty and the site falls back to the form exactly as before. */
+  booking: "https://cal.com/webnika-studio/15min",
 };
 
 /* Section anchors — order defines the narrative and the chapter rail. */
@@ -44,23 +50,49 @@ export const chapters = [
   { id: "launch", index: "11", key: "launch" },
 ];
 
+/* ------------------------------------------------------------------
+   PORTFOLIO
+   ------------------------------------------------------------------
+   `kind` decides which group a build appears in and what badge it wears:
+
+     "client"  — real paid work. Shown first, under "Client work".
+     "concept" — self-initiated build. Shown second, labelled honestly.
+
+   Every entry starts as "concept" because that is the safe default and
+   the only claim that cannot backfire. A buyer in Warsaw or Kyiv reads a
+   github.io URL as practice work in about one second, so a concept build
+   presented as a client project costs you the sale it was meant to win.
+
+   >>> FLIP `kind: "client"` ON EVERY PROJECT SOMEBODY ACTUALLY PAID FOR,
+   >>> and fill in `clientName` + `outcome` for each one. Three real
+   >>> projects with a number attached outsell fifteen concepts.
+
+   `outcome` is the one line that does the selling. Make it a measured
+   fact, never an adjective: "Lighthouse 41 → 98", "checkout in 3 steps
+   instead of 7", "load time 6.4s → 0.9s". Leave it empty until you have
+   the number; an empty outcome simply renders nothing.
+------------------------------------------------------------------- */
 export const projects = [
-  { key: "6studio", name: "6.Studio", url: "https://6-studio.vercel.app/", accent: "#55b4df", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin" },
-  { key: "esther", name: "Now.Esther", url: "https://esther-candles.vercel.app/", accent: "#715837", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin" },
-  { key: "alice-in-ualand", name: "Alice in UALand", url: "https://alice-in-ualand.vercel.app/", accent: "#245d30", year: "2026", stack: "React + Node.js · E-commerce + Admin" },
-  { key: "domivka", name: "Domivka Candles", url: "https://domivka-candles.up.railway.app/", accent: "#eb95dd", year: "2026", stack: "React + Node.js · E-commerce + Admin" },
-  { key: "mori-2.0", name: "Mori Matcha 2.0", url: "https://veronikapetrushka.github.io/mori-matcha-cafe-2.0/", accent: "#789165", year: "2026", stack: "React + Three.js · Redesign" },
-  { key: "lumovie", name: "Lumovie", url: "https://veronikapetrushka.github.io/lumovie/", accent: "#ef6a55", year: "2026", stack: "React · TMDB API" },
-  { key: "ember", name: "Ember Table", url: "https://veronikapetrushka.github.io/ember-table/", accent: "#e5533d", year: "2026", stack: "React · Booking flow" },
-  { key: "momentum", name: "Momentum Coach", url: "https://veronikapetrushka.github.io/momentum-coach/", accent: "#ff8a3d", year: "2026", stack: "React · Lead capture" },
-  { key: "sola", name: "Sola Pilates Studio", url: "https://veronikapetrushka.github.io/sola-pilates-studio/", accent: "#c8956d", year: "2026", stack: "React · Schedule UI" },
-  { key: "novahome", name: "NovaHome", url: "https://veronikapetrushka.github.io/novahome-real-estate/", accent: "#6677c8", year: "2026", stack: "React · Listings engine" },
-  { key: "cozy", name: "Cozy Recipes", url: "https://veronikapetrushka.github.io/cozy-recipe-journal/", accent: "#d98b4a", year: "2026", stack: "React · Content model" },
-  { key: "roamly", name: "Roamly", url: "https://veronikapetrushka.github.io/roamly-travel-app/", accent: "#6bb7c8", year: "2026", stack: "React · Search & filters" },
-  { key: "atelier", name: "Atelier Nova", url: "https://veronikapetrushka.github.io/atelier-nova/", accent: "#9d7965", year: "2026", stack: "React · Cart & checkout" },
-  { key: "mori", name: "Mori Matcha", url: "https://veronikapetrushka.github.io/mori-matcha-cafe/", accent: "#789165", year: "2026", stack: "React · Loyalty flow" },
-  { key: "vantage", name: "Vantage", url: "https://veronikapetrushka.github.io/vantage-portfolio/", accent: "#5268d8", year: "2026", stack: "React · Data viz" },
+  { key: "6studio", name: "6.Studio", url: "https://6-studio.vercel.app/", accent: "#55b4df", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin", kind: "concept", clientName: "", outcome: "" },
+  { key: "esther", name: "Now.Esther", url: "https://esther-candles.vercel.app/", accent: "#715837", year: "2026", stack: "Typescript + Node.js · E-commerce + Admin", kind: "concept", clientName: "", outcome: "" },
+  { key: "alice-in-ualand", name: "Alice in UALand", url: "https://alice-in-ualand.vercel.app/", accent: "#245d30", year: "2026", stack: "React + Node.js · E-commerce + Admin", kind: "concept", clientName: "", outcome: "" },
+  { key: "domivka", name: "Domivka Candles", url: "https://domivka-candles.up.railway.app/", accent: "#eb95dd", year: "2026", stack: "React + Node.js · E-commerce + Admin", kind: "concept", clientName: "", outcome: "" },
+  { key: "mori-2.0", name: "Mori Matcha 2.0", url: "https://veronikapetrushka.github.io/mori-matcha-cafe-2.0/", accent: "#789165", year: "2026", stack: "React + Three.js · Redesign", kind: "concept", clientName: "", outcome: "" },
+  { key: "lumovie", name: "Lumovie", url: "https://veronikapetrushka.github.io/lumovie/", accent: "#ef6a55", year: "2026", stack: "React · TMDB API", kind: "concept", clientName: "", outcome: "" },
+  { key: "ember", name: "Ember Table", url: "https://veronikapetrushka.github.io/ember-table/", accent: "#e5533d", year: "2026", stack: "React · Booking flow", kind: "concept", clientName: "", outcome: "" },
+  { key: "momentum", name: "Momentum Coach", url: "https://veronikapetrushka.github.io/momentum-coach/", accent: "#ff8a3d", year: "2026", stack: "React · Lead capture", kind: "concept", clientName: "", outcome: "" },
+  { key: "sola", name: "Sola Pilates Studio", url: "https://veronikapetrushka.github.io/sola-pilates-studio/", accent: "#c8956d", year: "2026", stack: "React · Schedule UI", kind: "concept", clientName: "", outcome: "" },
+  { key: "novahome", name: "NovaHome", url: "https://veronikapetrushka.github.io/novahome-real-estate/", accent: "#6677c8", year: "2026", stack: "React · Listings engine", kind: "concept", clientName: "", outcome: "" },
+  { key: "cozy", name: "Cozy Recipes", url: "https://veronikapetrushka.github.io/cozy-recipe-journal/", accent: "#d98b4a", year: "2026", stack: "React · Content model", kind: "concept", clientName: "", outcome: "" },
+  { key: "roamly", name: "Roamly", url: "https://veronikapetrushka.github.io/roamly-travel-app/", accent: "#6bb7c8", year: "2026", stack: "React · Search & filters", kind: "concept", clientName: "", outcome: "" },
+  { key: "atelier", name: "Atelier Nova", url: "https://veronikapetrushka.github.io/atelier-nova/", accent: "#9d7965", year: "2026", stack: "React · Cart & checkout", kind: "concept", clientName: "", outcome: "" },
+  { key: "mori", name: "Mori Matcha", url: "https://veronikapetrushka.github.io/mori-matcha-cafe/", accent: "#789165", year: "2026", stack: "React · Loyalty flow", kind: "concept", clientName: "", outcome: "" },
+  { key: "vantage", name: "Vantage", url: "https://veronikapetrushka.github.io/vantage-portfolio/", accent: "#5268d8", year: "2026", stack: "React · Data viz", kind: "concept", clientName: "", outcome: "" },
 ];
+
+/* Client work first, concepts after — the order the page renders in. */
+export const clientProjects = projects.filter((p) => p.kind === "client");
+export const conceptProjects = projects.filter((p) => p.kind !== "client");
 
 /* ================================================================
    ENGLISH
@@ -124,7 +156,7 @@ const en = {
     secondary: "See the work",
     trust: "Fullstack developer · Data Science graduate · 3+ years commercial",
     metrics: [
-      { value: "10", label: "PROJECTS", note: "Live, explorable case builds" },
+      { value: String(projects.length), label: "BUILDS", note: "Live and explorable — open any one" },
       { value: "100%", label: "RESPONSIVE", note: "Phone, tablet, desktop" },
       { value: "24h", label: "REPLY", note: "Typical response time" },
       { value: "04", label: "LANGUAGES", note: "EN · UA · PL · RU" },
@@ -203,14 +235,25 @@ const en = {
 
   work: {
     kicker: "Selected work",
-    title: "Ten builds you can//open and use right now.",
+    title: "Builds you can//open and use right now.",
     lede: "Not screenshots. Every card below loads the live site inside the frame — click through and break it if you like.",
     hint: "Hover to load the live site",
     open: "Open live site",
     counter: "PROJECT",
     cta: "Want yours in this list?",
     ctaButton: "Start a project",
+    groupClient: "Client work",
+    groupClientNote: "Built for a paying client, live on their own domain.",
+    groupConcept: "Concept builds",
+    groupConceptNote: "Self-initiated builds I use to test ideas and show range. No client brief behind them.",
+    badgeClient: "CLIENT",
+    badgeConcept: "CONCEPT",
     types: {
+      "6studio": "Studio store & admin panel",
+      esther: "Candle brand & orders",
+      "alice-in-ualand": "Concept store & admin",
+      domivka: "Candle store & admin",
+      "mori-2.0": "Café redesign in 3D",
       lumovie: "Popular movies catalogue",
       ember: "Restaurant & reservations",
       sola: "Pilates studio & schedule",
@@ -271,9 +314,11 @@ const en = {
     showLess: "Show less",
     featuresWord: "features",
     guarantees: [
-      "Fixed price agreed before work starts",
+      "Fixed price agreed in writing before work starts",
+      "Paid in three parts: 40% to start, 40% at design approval, 20% at launch",
+      "Your launch date is written into the contract",
+      "If the design direction is wrong after two rounds, we stop and you owe nothing further",
       "You own the code and the domain",
-      "Revision rounds included in every package",
       "No monthly lock-in — support is optional",
     ],
     finder: {
@@ -322,19 +367,19 @@ const en = {
     items: [
       {
         name: "One-time update",
-        price: "$99",
+        price: "€120",
         note: "PER REQUEST",
         body: "Content updates, a new section, layout improvements, bug fixes or a small feature — whenever you need them.",
       },
       {
         name: "Website care",
-        price: "$79",
+        price: "€180",
         note: "PER MONTH",
         body: "Updates, backups, security monitoring, performance checks, content changes and up to two hours of improvements every month.",
       },
       {
         name: "Premium care",
-        price: "$790",
+        price: "€1,800",
         note: "PER YEAR",
         body: "Priority support, unlimited security updates, automated backups, ongoing monitoring and improvements. Two months free.",
       },
@@ -356,6 +401,11 @@ const en = {
     signature: "Veronika Petrushka — founder, designer & developer",
   },
 
+  /* A testimonial signed with initials reads as invented, whether or not
+     it is — and one verifiable quote outsells six anonymous ones. Fill in
+     `business` and `url` for each of these (and a full surname where the
+     person agrees). Both fields render only when set, so the section looks
+     correct meanwhile. Anything you cannot attribute, delete. */
   signals: {
     kicker: "Signals of trust",
     title: "What clients actually say.",
@@ -364,16 +414,22 @@ const en = {
         quote: "Veronika understood the business quickly and turned our scattered ideas into a clean site our customers can actually use.",
         name: "Anna K.",
         role: "Beauty studio owner",
+        business: "",
+        url: "",
       },
       {
         quote: "Communication was clear, every stage was explained, and the final website looks far more professional than our old one.",
         name: "Marek P.",
         role: "Property consultant",
+        business: "",
+        url: "",
       },
       {
         quote: "The site works beautifully on mobile and the ordering flow is simple. Every update arrived exactly as agreed.",
         name: "Sofia D.",
         role: "Independent brand founder",
+        business: "",
+        url: "",
       },
     ],
   },
@@ -383,8 +439,10 @@ const en = {
     title: "Answers before//the first invoice.",
     lede: "The questions I am asked most often, answered the way I would answer them on a call.",
     items: [
-      ["How much does a website cost?", "It depends on scope and functionality. Light starts at $399, Basic at $899, and Pro from $1,699. You receive a written quote before any development begins, and the agreed number does not move."],
-      ["How long does development take?", "Light usually takes 3–7 days, Basic 10–14 days, and Pro projects 3–6 weeks. Timing depends on how quickly content and feedback arrive from your side."],
+      ["How much does a website cost?", "It depends on scope and functionality. Launch starts at €1,800, Studio at €3,400, and System from €6,000. Prices are shown in the currency of the market you are reading in, so the Polish and Ukrainian versions of this page quote PLN and USD. You receive a written quote before any development begins, and the agreed number does not move."],
+      ["Why not cheaper?", "Because a cheap site is the expensive one. Below this level the work becomes a template with your logo dropped on it, and the thing you are actually buying — the decision about what the site is for, in what order, aimed at which customer — gets skipped. If the budget genuinely is not there yet, say so and I will tell you honestly whether to wait."],
+      ["How do payments work?", "Three parts: 40% to start, 40% when you approve the design direction, 20% at launch. Nothing begins before the first part clears, and the launch date goes into the contract. If the design direction is wrong after two rounds, we stop there and you owe nothing beyond what is already paid."],
+      ["How long does development take?", "Launch usually takes 5–7 days, Studio 12–16 days, and System projects 4–7 weeks. Timing depends on how quickly content and feedback arrive from your side."],
       ["Can you help with the design and the ideas?", "Yes — that is most of the value. You do not need a finished layout. I prepare the page structure, visual direction, content ideas and recommendations based on what will be clearest and most convincing for your customers."],
       ["Can a website make my business more recognisable?", "That is one of the main goals. A distinctive, professional presence states your value clearly, builds trust and makes it easier for local customers to remember and contact you."],
       ["Can you redesign my existing website?", "Yes. I modernise the visual style, fix the mobile experience, reorganise the content, improve clarity and repair technical or performance problems."],
@@ -393,7 +451,7 @@ const en = {
       ["Do you provide support after launch?", "Yes. One-time, monthly and yearly options cover updates, fixes, backups, improvements and ongoing technical help. Support is optional and never locked in."],
       ["Will you help with the domain and hosting?", "Yes. I can help select hosting, connect the domain, configure deployment and publish the finished site."],
       ["Can you add payments, bookings or integrations?", "Yes. Depending on the project I integrate payments, booking forms, calendars, maps, newsletters, APIs, product catalogues and custom workflows."],
-      ["Is SEO included?", "Essential technical SEO is included in every package: semantic structure, metadata, mobile optimisation, image optimisation and performance. Deeper SEO and structured data come with Pro."],
+      ["Is SEO included?", "Essential technical SEO is included in every package: semantic structure, metadata, mobile optimisation, image optimisation and performance. Deeper SEO and structured data come with System."],
       ["What do you need from me to start?", "Your business goals, your services, any logo or brand material, examples you like, and any existing text or photos. Where something is missing, I propose the structure and content direction."],
       ["Do you only work with clients in Poland?", "No. I work remotely with clients in different countries and communicate in English, Ukrainian and Polish."],
       ["What happens after I submit the form?", "I read the request and normally reply within 24 hours. We discuss goals, the right package, timeline and final scope before any development begins."],
@@ -410,6 +468,7 @@ const en = {
     body: "Tell me what you do, what you need and roughly when you want to launch. I will reply within 24 hours with a clear recommendation.",
     button: "Start a project",
     secondary: "Or email me directly",
+    booking: "Book 15 minutes",
   },
 
   footer: {
@@ -431,7 +490,7 @@ const en = {
     phone: "Phone (optional)",
     business: "Business type",
     budgetLabel: "Approximate budget",
-    budgets: ["Under $500", "$500 – $1,000", "$1,000 – $2,000", "$2,000+", "Not sure yet"],
+    budgets: ["€1,800 – €3,400", "€3,400 – €6,000", "€6,000 – €12,000", "€12,000+", "Not sure yet"],
     message: "Tell me about the website you need",
     messagePlaceholder: "What you do, who your customers are, what the site must achieve, and any examples you like.",
     send: "Send request",
@@ -442,15 +501,33 @@ const en = {
   },
 };
 
+/* ------------------------------------------------------------------
+   PRICES ARE SET PER LANGUAGE, ON PURPOSE, AND ARE NOT THE SAME.
+
+   A single USD list is simultaneously too expensive for Kyiv and
+   suspiciously cheap for London, so each language carries the price book
+   for the market that reads it:
+
+     EN → EUR   worldwide / premium
+     PL → PLN   net, Poland  (market floor for a multi-page site is
+                7,000 PLN net, so 9,900 sits where it should)
+     UK → USD   Ukraine  (studios there charge from $2,600 for the
+                animation-heavy work in this portfolio)
+
+   The old $399 entry tier is gone. It undercut a DIY builder
+   subscription, and it filtered *for* the buyers who negotiate, stall
+   and disappear. The cheapest thing here is now a real project.
+------------------------------------------------------------------- */
 en.pricing.plans = [
   {
-    key: "light",
-    name: "Light",
-    price: "$399",
+    key: "launch",
+    name: "Launch",
+    price: "€1,800",
+    priceNote: "Fixed. 40 / 40 / 20 payments.",
     badge: "Fast launch",
     for: "New businesses that need to exist online, credibly, this week.",
     desc: "A professional one-page website that establishes your presence and lets customers understand your offer in thirty seconds.",
-    eta: "3–7 days",
+    eta: "5–7 days",
     items: [
       "Custom one-page design — no template",
       "Fully responsive for mobile, tablet and desktop",
@@ -467,13 +544,14 @@ en.pricing.plans = [
     ],
   },
   {
-    key: "basic",
-    name: "Basic",
-    price: "$899",
+    key: "studio",
+    name: "Studio",
+    price: "€3,400",
+    priceNote: "Fixed. 40 / 40 / 20 payments.",
     badge: "Most chosen",
     for: "Established businesses with several services to explain properly.",
     desc: "A complete multi-page website that builds trust, presents your services in the right order and converts visitors into enquiries.",
-    eta: "10–14 days",
+    eta: "12–16 days",
     items: [
       "2–5 fully custom pages",
       "Unique UI/UX design tailored to your brand",
@@ -492,13 +570,14 @@ en.pricing.plans = [
     ],
   },
   {
-    key: "pro",
-    name: "Pro",
-    price: "From $1,699",
+    key: "system",
+    name: "System",
+    price: "From €6,000",
+    priceNote: "Quoted on scope. 40 / 40 / 20 payments.",
     badge: "Custom build",
     for: "Businesses that need the website to actually do work.",
     desc: "A fully custom website or web application with advanced functionality, automation and integrations built around your operation.",
-    eta: "3–6 weeks",
+    eta: "4–7 weeks",
     items: [
       "Unlimited custom pages",
       "Completely bespoke UI/UX design system",
@@ -581,7 +660,7 @@ const uk = {
     secondary: "Переглянути роботи",
     trust: "Fullstack-розробниця · Випускниця Data Science · 3+ роки комерційного досвіду",
     metrics: [
-      { value: "10", label: "ПРОЄКТИ", note: "Живі проєкти, які можна відкрити" },
+      { value: String(projects.length), label: "ПРОЄКТИ", note: "Живі проєкти, які можна відкрити" },
       { value: "100%", label: "АДАПТИВНІСТЬ", note: "Телефон, планшет, комп'ютер" },
       { value: "24г", label: "ВІДПОВІДЬ", note: "Типовий час відповіді" },
       { value: "04", label: "МОВИ", note: "EN · UA · PL · RU" },
@@ -660,14 +739,25 @@ const uk = {
 
   work: {
     kicker: "Вибрані роботи",
-    title: "Десять проєктів, які можна//відкрити просто зараз.",
+    title: "Проєкти, які можна//відкрити просто зараз.",
     lede: "Не скріншоти. Кожна картка завантажує живий сайт прямо у рамці — відкривайте й тестуйте.",
     hint: "Наведіть, щоб завантажити сайт",
     open: "Відкрити сайт",
     counter: "ПРОЄКТ",
     cta: "Хочете свій проєкт у цьому списку?",
     ctaButton: "Почати проєкт",
+    groupClient: "Клієнтські проєкти",
+    groupClientNote: "Зроблено для клієнта, який заплатив, і працює на його власному домені.",
+    groupConcept: "Концептуальні проєкти",
+    groupConceptNote: "Власні проєкти, у яких я перевіряю ідеї та показую діапазон. Без клієнтського брифу.",
+    badgeClient: "КЛІЄНТ",
+    badgeConcept: "КОНЦЕПТ",
     types: {
+      "6studio": "Магазин студії та адмінпанель",
+      esther: "Бренд свічок і замовлення",
+      "alice-in-ualand": "Концептуальний магазин і адмінка",
+      domivka: "Магазин свічок і адмінка",
+      "mori-2.0": "Редизайн кав'ярні у 3D",
       lumovie: "Каталог популярних фільмів",
       ember: "Ресторан і бронювання",
       sola: "Студія пілатесу й розклад",
@@ -728,9 +818,11 @@ const uk = {
     showLess: "Згорнути",
     featuresWord: "пунктів",
     guarantees: [
-      "Фіксована ціна, погоджена до початку робіт",
+      "Фіксована ціна, погоджена письмово до початку робіт",
+      "Оплата трьома частинами: 40% на старті, 40% після затвердження дизайну, 20% при публікації",
+      "Дата запуску прописана в договорі",
+      "Якщо після двох раундів напрям дизайну не підходить — ми зупиняємось, і ви більше нічого не платите",
       "Код і домен належать вам",
-      "Раунди правок входять у кожен пакет",
       "Без щомісячної прив'язки — підтримка за бажанням",
     ],
     finder: {
@@ -779,19 +871,19 @@ const uk = {
     items: [
       {
         name: "Разове оновлення",
-        price: "$99",
+        price: "$70",
         note: "ЗА ЗАПИТ",
         body: "Оновлення контенту, нова секція, покращення макета, виправлення помилок або невелика функція — коли потрібно.",
       },
       {
         name: "Щомісячна підтримка",
-        price: "$79",
+        price: "$120",
         note: "НА МІСЯЦЬ",
         body: "Оновлення, резервні копії, моніторинг безпеки, перевірка швидкодії, зміни контенту та до двох годин покращень щомісяця.",
       },
       {
         name: "Преміум підтримка",
-        price: "$790",
+        price: "$1,200",
         note: "НА РІК",
         body: "Пріоритетна підтримка, необмежені оновлення безпеки, автоматичні бекапи, постійний моніторинг і покращення. Два місяці безкоштовно.",
       },
@@ -821,16 +913,22 @@ const uk = {
         quote: "Вероніка швидко зрозуміла бізнес і перетворила наші розрізнені ідеї на чистий сайт, яким клієнтам зручно користуватися.",
         name: "Анна К.",
         role: "Власниця beauty-студії",
+        business: "",
+        url: "",
       },
       {
         quote: "Комунікація була зрозумілою, кожен етап пояснювався, а результат виглядає значно професійніше за попередній сайт.",
         name: "Марек П.",
         role: "Консультант з нерухомості",
+        business: "",
+        url: "",
       },
       {
         quote: "Сайт чудово працює на телефоні, а процес замовлення дуже простий. Кожне оновлення приходило точно як домовлялися.",
         name: "Софія Д.",
         role: "Засновниця бренду",
+        business: "",
+        url: "",
       },
     ],
   },
@@ -840,8 +938,10 @@ const uk = {
     title: "Відповіді ще до//першого рахунку.",
     lede: "Питання, які ставлять найчастіше — відповіді такі ж, як були б на дзвінку.",
     items: [
-      ["Скільки коштує сайт?", "Залежить від обсягу та функціональності. Light — від $399, Basic — від $899, Pro — від $1,699. Ви отримуєте письмову пропозицію до початку розробки, і погоджена сума не змінюється."],
-      ["Скільки часу займає розробка?", "Light зазвичай 3–7 днів, Basic 10–14 днів, Pro 3–6 тижнів. Терміни залежать від швидкості надання контенту та зворотного зв'язку."],
+      ["Скільки коштує сайт?", "Залежить від обсягу та функціональності. Launch — від $900, Studio — від $1,600, System — від $2,800. Ціни показані у валюті того ринку, мовою якого ви читаєте цю сторінку, тому польська та англійська версії подають злоті й євро. Ви отримуєте письмову пропозицію до початку розробки, і погоджена сума не змінюється."],
+      ["Чому не дешевше?", "Бо дешевий сайт і є найдорожчим. Нижче цього рівня робота перетворюється на шаблон із вашим логотипом, і зникає саме те, за що ви платите: рішення про те, для чого цей сайт, у якому порядку і для якого клієнта. Якщо бюджету поки справді немає — скажіть прямо, і я чесно пораджу, чи варто чекати."],
+      ["Як відбувається оплата?", "Трьома частинами: 40% на старті, 40% після затвердження напряму дизайну, 20% при публікації. Робота не починається до першого платежу, а дата запуску прописується в договорі. Якщо після двох раундів напрям дизайну не підходить — ми зупиняємось, і ви більше нічого не платите."],
+      ["Скільки часу займає розробка?", "Launch зазвичай 5–7 днів, Studio 12–16 днів, System 4–7 тижнів. Терміни залежать від швидкості надання контенту та зворотного зв'язку."],
       ["Чи допоможете з дизайном та ідеями?", "Так — це основна цінність. Готовий макет не потрібен. Я готую структуру сторінок, візуальний напрям, ідеї контенту й рекомендації щодо того, що буде найзрозумілішим для ваших клієнтів."],
       ["Чи зробить сайт бізнес впізнаванішим?", "Це одна з головних цілей. Помітна професійна присутність чітко подає вашу цінність, формує довіру й допомагає локальним клієнтам запам'ятати вас."],
       ["Чи можете оновити мій наявний сайт?", "Так. Осучаснюю стиль, виправляю мобільну версію, переорганізовую контент, підвищую зрозумілість і усуваю технічні проблеми."],
@@ -850,7 +950,7 @@ const uk = {
       ["Чи є підтримка після запуску?", "Так. Разова, щомісячна та річна опції покривають оновлення, виправлення, бекапи, покращення й технічну допомогу. Підтримка необов'язкова."],
       ["Чи допоможете з доменом і хостингом?", "Так. Допоможу обрати хостинг, підключити домен, налаштувати деплой і опублікувати готовий сайт."],
       ["Чи можна додати оплати, бронювання, інтеграції?", "Так. Залежно від проєкту інтегрую оплати, форми бронювання, календарі, карти, розсилки, API, каталоги та індивідуальні сценарії."],
-      ["Чи входить SEO?", "Базове технічне SEO входить у кожен пакет: семантична структура, метадані, мобільна оптимізація, оптимізація зображень і швидкодія. Глибше SEO та структуровані дані — у Pro."],
+      ["Чи входить SEO?", "Базове технічне SEO входить у кожен пакет: семантична структура, метадані, мобільна оптимізація, оптимізація зображень і швидкодія. Глибше SEO та структуровані дані — у System."],
       ["Що потрібно від мене для старту?", "Цілі бізнесу, опис послуг, логотип чи брендові матеріали, приклади, які подобаються, а також наявні тексти та фото. Якщо чогось немає — запропоную структуру й напрям контенту."],
       ["Ви працюєте лише з клієнтами в Польщі?", "Ні. Працюю віддалено з клієнтами з різних країн і спілкуюся англійською, українською та польською."],
       ["Що буде після надсилання форми?", "Я читаю запит і зазвичай відповідаю протягом 24 годин. Ми обговорюємо цілі, відповідний пакет, терміни й остаточний обсяг до початку розробки."],
@@ -867,6 +967,7 @@ const uk = {
     body: "Розкажіть, чим займаєтеся, що потрібно і коли приблизно хочете запуститися. Відповім протягом 24 годин із чіткою рекомендацією.",
     button: "Почати проєкт",
     secondary: "Або напишіть напряму",
+    booking: "Забронювати 15 хвилин",
   },
 
   footer: {
@@ -888,7 +989,7 @@ const uk = {
     phone: "Телефон (необов'язково)",
     business: "Тип бізнесу",
     budgetLabel: "Орієнтовний бюджет",
-    budgets: ["До $500", "$500 – $1,000", "$1,000 – $2,000", "$2,000+", "Поки не знаю"],
+    budgets: ["$900 – $1,600", "$1,600 – $2,800", "$2,800 – $5,000", "$5,000+", "Поки не знаю"],
     message: "Опишіть потрібний сайт",
     messagePlaceholder: "Чим займаєтеся, хто ваші клієнти, чого має досягти сайт і які приклади вам подобаються.",
     send: "Надіслати запит",
@@ -901,13 +1002,14 @@ const uk = {
 
 uk.pricing.plans = [
   {
-    key: "light",
-    name: "Light",
-    price: "$399",
+    key: "launch",
+    name: "Launch",
+    price: "$900",
+    priceNote: "Фіксовано. Оплата 40 / 40 / 20.",
     badge: "Швидкий запуск",
     for: "Новим бізнесам, яким потрібна впевнена присутність вже цього тижня.",
     desc: "Професійний односторінковий сайт, який створює присутність і дає клієнтам зрозуміти вашу пропозицію за тридцять секунд.",
-    eta: "3–7 днів",
+    eta: "5–7 днів",
     items: [
       "Індивідуальний дизайн односторінкового сайту — без шаблонів",
       "Повна адаптація для телефона, планшета й комп'ютера",
@@ -924,13 +1026,14 @@ uk.pricing.plans = [
     ],
   },
   {
-    key: "basic",
-    name: "Basic",
-    price: "$899",
+    key: "studio",
+    name: "Studio",
+    price: "$1,600",
+    priceNote: "Фіксовано. Оплата 40 / 40 / 20.",
     badge: "Найчастіший вибір",
     for: "Бізнесам, яким треба грамотно пояснити кілька послуг.",
     desc: "Повноцінний багатосторінковий сайт, який формує довіру, подає послуги у правильному порядку й перетворює відвідувачів на звернення.",
-    eta: "10–14 днів",
+    eta: "12–16 днів",
     items: [
       "2–5 повністю індивідуальних сторінок",
       "Унікальний UI/UX-дизайн під ваш бренд",
@@ -949,13 +1052,14 @@ uk.pricing.plans = [
     ],
   },
   {
-    key: "pro",
-    name: "Pro",
-    price: "Від $1,699",
+    key: "system",
+    name: "System",
+    price: "Від $2,800",
+    priceNote: "Ціна за обсягом. Оплата 40 / 40 / 20.",
     badge: "Індивідуальна розробка",
     for: "Бізнесам, яким сайт має виконувати реальну роботу.",
     desc: "Повністю індивідуальний сайт або вебзастосунок із розширеним функціоналом, автоматизацією та інтеграціями під вашу операційну модель.",
-    eta: "3–6 тижнів",
+    eta: "4–7 тижнів",
     items: [
       "Необмежена кількість сторінок",
       "Повністю індивідуальна дизайн-система UI/UX",
@@ -1038,7 +1142,7 @@ const pl = {
     secondary: "Zobacz realizacje",
     trust: "Fullstack Developer · Absolwentka Data Science · 3+ lata komercyjnie",
     metrics: [
-      { value: "10", label: "PROJEKTY", note: "Działające realizacje do otwarcia" },
+      { value: String(projects.length), label: "PROJEKTY", note: "Działające realizacje do otwarcia" },
       { value: "100%", label: "RESPONSYWNOŚĆ", note: "Telefon, tablet, komputer" },
       { value: "24h", label: "ODPOWIEDŹ", note: "Typowy czas odpowiedzi" },
       { value: "04", label: "JĘZYKI", note: "EN · UA · PL · RU" },
@@ -1117,14 +1221,25 @@ const pl = {
 
   work: {
     kicker: "Wybrane realizacje",
-    title: "Dziesięć projektów, które//otworzysz od razu.",
+    title: "Projekty, które//otworzysz od razu.",
     lede: "To nie zrzuty ekranu. Każda karta ładuje działającą stronę wewnątrz ramki — wejdź i sprawdź.",
     hint: "Najedź, aby wczytać stronę",
     open: "Otwórz stronę",
     counter: "PROJEKT",
     cta: "Chcesz swój projekt na tej liście?",
     ctaButton: "Rozpocznij projekt",
+    groupClient: "Realizacje klienckie",
+    groupClientNote: "Zrobione dla płacącego klienta i działające na jego własnej domenie.",
+    groupConcept: "Projekty koncepcyjne",
+    groupConceptNote: "Własne projekty, w których testuję pomysły i pokazuję zakres. Bez briefu od klienta.",
+    badgeClient: "KLIENT",
+    badgeConcept: "KONCEPT",
     types: {
+      "6studio": "Sklep studia i panel admina",
+      esther: "Marka świec i zamówienia",
+      "alice-in-ualand": "Sklep koncepcyjny i panel",
+      domivka: "Sklep ze świecami i panel",
+      "mori-2.0": "Redesign kawiarni w 3D",
       lumovie: "Katalog popularnych filmów",
       ember: "Restauracja i rezerwacje",
       sola: "Studio pilatesu i grafik",
@@ -1185,9 +1300,11 @@ const pl = {
     showLess: "Zwiń",
     featuresWord: "punktów",
     guarantees: [
-      "Stała cena ustalona przed rozpoczęciem prac",
+      "Stała cena ustalona pisemnie przed rozpoczęciem prac",
+      "Płatność w trzech częściach: 40% na start, 40% po akceptacji projektu, 20% przy publikacji",
+      "Data publikacji wpisana do umowy",
+      "Jeśli po dwóch rundach kierunek projektu nie pasuje — zatrzymujemy się i nie płacisz nic więcej",
       "Kod i domena należą do Ciebie",
-      "Rundy poprawek w każdym pakiecie",
       "Bez abonamentu na siłę — opieka jest opcjonalna",
     ],
     finder: {
@@ -1236,19 +1353,19 @@ const pl = {
     items: [
       {
         name: "Jednorazowa aktualizacja",
-        price: "$99",
+        price: "350 zł",
         note: "ZA ZGŁOSZENIE",
         body: "Aktualizacja treści, nowa sekcja, poprawki układu, naprawa błędów lub drobna funkcja — kiedy tylko trzeba.",
       },
       {
         name: "Opieka miesięczna",
-        price: "$79",
+        price: "600 zł",
         note: "MIESIĘCZNIE",
         body: "Aktualizacje, kopie zapasowe, monitoring bezpieczeństwa, kontrola wydajności, zmiany treści i do dwóch godzin ulepszeń co miesiąc.",
       },
       {
         name: "Opieka premium",
-        price: "$790",
+        price: "6 000 zł",
         note: "ROCZNIE",
         body: "Priorytetowe wsparcie, nielimitowane aktualizacje bezpieczeństwa, automatyczne kopie, stały monitoring i ulepszenia. Dwa miesiące gratis.",
       },
@@ -1278,16 +1395,22 @@ const pl = {
         quote: "Veronika szybko zrozumiała biznes i zamieniła nasze rozproszone pomysły w przejrzystą stronę, z której klienci realnie korzystają.",
         name: "Anna K.",
         role: "Właścicielka salonu beauty",
+        business: "",
+        url: "",
       },
       {
         quote: "Komunikacja była jasna, każdy etap wyjaśniony, a efekt wygląda znacznie bardziej profesjonalnie niż poprzednia strona.",
         name: "Marek P.",
         role: "Konsultant nieruchomości",
+        business: "",
+        url: "",
       },
       {
         quote: "Strona świetnie działa na telefonie, a proces zamówienia jest prosty. Każda zmiana przyszła dokładnie tak, jak ustaliliśmy.",
         name: "Sofia D.",
         role: "Założycielka marki",
+        business: "",
+        url: "",
       },
     ],
   },
@@ -1297,8 +1420,10 @@ const pl = {
     title: "Odpowiedzi jeszcze przed//pierwszą fakturą.",
     lede: "Pytania, które słyszę najczęściej — odpowiedzi takie same, jakich udzieliłabym przez telefon.",
     items: [
-      ["Ile kosztuje strona internetowa?", "To zależy od zakresu i funkcji. Light od $399, Basic od $899, Pro od $1,699. Pisemną wycenę otrzymujesz przed startem prac, a uzgodniona kwota się nie zmienia."],
-      ["Ile trwa realizacja?", "Light zwykle 3–7 dni, Basic 10–14 dni, Pro 3–6 tygodni. Termin zależy też od tempa dostarczania treści i akceptacji."],
+      ["Ile kosztuje strona internetowa?", "To zależy od zakresu i funkcji. Launch od 4 900 zł netto, Studio od 9 900 zł netto, System od 18 000 zł netto. Ceny podaję w walucie rynku, w którego języku czytasz tę stronę. Pisemną wycenę otrzymujesz przed startem prac, a uzgodniona kwota się nie zmienia."],
+      ["Dlaczego nie taniej?", "Bo tania strona jest tą drogą. Poniżej tego poziomu praca zamienia się w szablon z Twoim logo, a znika dokładnie to, za co się płaci: decyzja o tym, po co jest ta strona, w jakiej kolejności i do jakiego klienta. Jeśli budżetu naprawdę jeszcze nie ma — powiedz wprost, a ja uczciwie doradzę, czy warto poczekać."],
+      ["Jak wygląda płatność?", "W trzech częściach: 40% na start, 40% po akceptacji kierunku projektu, 20% przy publikacji. Praca nie zaczyna się przed pierwszą płatnością, a data publikacji wpisana jest do umowy. Jeśli po dwóch rundach kierunek projektu nie pasuje — zatrzymujemy się i nie płacisz nic więcej."],
+      ["Ile trwa realizacja?", "Launch zwykle 5–7 dni, Studio 12–16 dni, System 4–7 tygodni. Termin zależy też od tempa dostarczania treści i akceptacji."],
       ["Czy pomożesz z designem i pomysłami?", "Tak — to główna wartość. Nie potrzebujesz gotowego projektu. Przygotowuję strukturę stron, kierunek wizualny, pomysły na treść i rekomendacje oparte na tym, co będzie najczytelniejsze dla Twoich klientów."],
       ["Czy strona zwiększy rozpoznawalność firmy?", "To jeden z głównych celów. Wyrazista, profesjonalna obecność jasno pokazuje Twoją wartość, buduje zaufanie i ułatwia lokalnym klientom zapamiętanie Cię."],
       ["Czy przeprojektujesz moją obecną stronę?", "Tak. Unowocześniam styl, naprawiam wersję mobilną, porządkuję treści, zwiększam czytelność i usuwam problemy techniczne."],
@@ -1307,7 +1432,7 @@ const pl = {
       ["Czy jest wsparcie po wdrożeniu?", "Tak. Opcje jednorazowe, miesięczne i roczne obejmują aktualizacje, poprawki, kopie zapasowe, ulepszenia i pomoc techniczną. Opieka jest opcjonalna."],
       ["Czy pomożesz z domeną i hostingiem?", "Tak. Pomogę wybrać hosting, podłączyć domenę, skonfigurować wdrożenie i opublikować gotową stronę."],
       ["Czy można dodać płatności, rezerwacje, integracje?", "Tak. W zależności od projektu integruję płatności, formularze rezerwacji, kalendarze, mapy, newslettery, API, katalogi i własne procesy."],
-      ["Czy SEO jest wliczone?", "Podstawowe SEO techniczne jest w każdym pakiecie: semantyczna struktura, metadane, optymalizacja mobilna, optymalizacja obrazów i wydajność. Głębsze SEO i dane strukturalne są w Pro."],
+      ["Czy SEO jest wliczone?", "Podstawowe SEO techniczne jest w każdym pakiecie: semantyczna struktura, metadane, optymalizacja mobilna, optymalizacja obrazów i wydajność. Głębsze SEO i dane strukturalne są w System."],
       ["Czego potrzebujesz ode mnie na start?", "Celów firmy, opisu usług, logo lub materiałów marki, przykładów, które Ci się podobają, oraz istniejących tekstów i zdjęć. Czego brakuje — zaproponuję strukturę i kierunek treści."],
       ["Czy pracujesz tylko z klientami w Polsce?", "Nie. Pracuję zdalnie z klientami z różnych krajów i komunikuję się po angielsku, ukraińsku i polsku."],
       ["Co się dzieje po wysłaniu formularza?", "Czytam zapytanie i zwykle odpowiadam w ciągu 24 godzin. Omawiamy cele, właściwy pakiet, termin i finalny zakres przed rozpoczęciem prac."],
@@ -1324,6 +1449,7 @@ const pl = {
     body: "Napisz, czym się zajmujesz, czego potrzebujesz i mniej więcej kiedy chcesz wystartować. Odpowiem w ciągu 24 godzin z konkretną rekomendacją.",
     button: "Rozpocznij projekt",
     secondary: "Albo napisz bezpośrednio",
+    booking: "Zarezerwuj 15 minut",
   },
 
   footer: {
@@ -1345,7 +1471,7 @@ const pl = {
     phone: "Telefon (opcjonalnie)",
     business: "Rodzaj firmy",
     budgetLabel: "Orientacyjny budżet",
-    budgets: ["Poniżej $500", "$500 – $1,000", "$1,000 – $2,000", "$2,000+", "Jeszcze nie wiem"],
+    budgets: ["4 900 – 9 900 zł", "9 900 – 18 000 zł", "18 000 – 35 000 zł", "35 000 zł+", "Jeszcze nie wiem"],
     message: "Opisz potrzebną stronę",
     messagePlaceholder: "Czym się zajmujesz, kim są Twoi klienci, co strona ma osiągnąć i jakie przykłady Ci się podobają.",
     send: "Wyślij zapytanie",
@@ -1358,13 +1484,14 @@ const pl = {
 
 pl.pricing.plans = [
   {
-    key: "light",
-    name: "Light",
-    price: "$399",
+    key: "launch",
+    name: "Launch",
+    price: "4 900 zł",
+    priceNote: "Netto, + 23% VAT. Płatność 40 / 40 / 20.",
     badge: "Szybki start",
     for: "Nowym firmom, które potrzebują wiarygodnej obecności już w tym tygodniu.",
     desc: "Profesjonalna strona jednostronicowa, która buduje obecność i pozwala klientom zrozumieć ofertę w trzydzieści sekund.",
-    eta: "3–7 dni",
+    eta: "5–7 dni",
     items: [
       "Indywidualny projekt one-page — bez szablonu",
       "Pełna responsywność: telefon, tablet, komputer",
@@ -1381,13 +1508,14 @@ pl.pricing.plans = [
     ],
   },
   {
-    key: "basic",
-    name: "Basic",
-    price: "$899",
+    key: "studio",
+    name: "Studio",
+    price: "9 900 zł",
+    priceNote: "Netto, + 23% VAT. Płatność 40 / 40 / 20.",
     badge: "Najczęściej wybierany",
     for: "Firmom, które mają kilka usług do porządnego wyjaśnienia.",
     desc: "Kompletna strona wielopodstronowa, która buduje zaufanie, przedstawia usługi we właściwej kolejności i zamienia odwiedzających w zapytania.",
-    eta: "10–14 dni",
+    eta: "12–16 dni",
     items: [
       "2–5 w pełni indywidualnych podstron",
       "Unikalny projekt UI/UX dopasowany do marki",
@@ -1406,13 +1534,14 @@ pl.pricing.plans = [
     ],
   },
   {
-    key: "pro",
-    name: "Pro",
-    price: "Od $1,699",
+    key: "system",
+    name: "System",
+    price: "od 18 000 zł",
+    priceNote: "Netto, wycena wg zakresu. Płatność 40 / 40 / 20.",
     badge: "Projekt indywidualny",
     for: "Firmom, którym strona ma wykonywać realną pracę.",
     desc: "W pełni indywidualna strona lub aplikacja webowa z zaawansowanymi funkcjami, automatyzacją i integracjami wokół Twojej operacji.",
-    eta: "3–6 tygodni",
+    eta: "4–7 tygodni",
     items: [
       "Nielimitowana liczba podstron",
       "Całkowicie autorski system UI/UX",

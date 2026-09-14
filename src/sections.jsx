@@ -18,7 +18,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { Btn, Head, Lines, Rich } from "./ui.jsx";
-import { projects } from "./content.js";
+import { clientProjects, conceptProjects } from "./content.js";
 import { isFinePointer } from "./lib/motion.js";
 
 /* ==================================================================
@@ -257,6 +257,8 @@ function ProjectFrame({ project, type, hint, label }) {
 export function Work({ t, onStart }) {
   const railRef = useRef(null);
   const [active, setActive] = useState(0);
+  /* Paid work leads; concepts follow. */
+  const ordered = [...clientProjects, ...conceptProjects];
 
   const scrollToCard = (index) => {
     const rail = railRef.current;
@@ -288,7 +290,7 @@ export function Work({ t, onStart }) {
   };
 
   const step = (delta) => {
-    const next = Math.max(0, Math.min(projects.length, active + delta));
+    const next = Math.max(0, Math.min(ordered.length, active + delta));
     scrollToCard(next);
   };
 
@@ -296,8 +298,26 @@ export function Work({ t, onStart }) {
     <section className="chapter wrap" id="work" data-depth="0.6">
       <Head index="04" kicker={t.work.kicker} title={t.work.title} lede={t.work.lede} split />
 
+      {/* Client work is ordered first and badged. A concept build that reads
+          as client work costs the sale it was meant to win, so the badge is
+          not decoration — it is the trust. */}
+      <div className="work__groups" data-reveal="lift">
+        {clientProjects.length ? (
+          <div className="work__group is-client">
+            <span>{t.work.groupClient}</span>
+            <small className="work__groupnote">{t.work.groupClientNote}</small>
+          </div>
+        ) : null}
+        {conceptProjects.length ? (
+          <div className="work__group">
+            <span>{t.work.groupConcept}</span>
+            <small className="work__groupnote">{t.work.groupConceptNote}</small>
+          </div>
+        ) : null}
+      </div>
+
       <div className="work__rail" ref={railRef} onScroll={onScroll} data-reveal="lift">
-        {projects.map((project, index) => (
+        {ordered.map((project, index) => (
           <article className="work__card" key={project.key}>
             <ProjectFrame
               project={project}
@@ -310,6 +330,11 @@ export function Work({ t, onStart }) {
                 {t.work.counter} {String(index + 1).padStart(2, "0")} — {project.stack}
               </small>
               <h3>{project.name}</h3>
+              <span className={project.kind === "client" ? "work__badge is-client" : "work__badge"}>
+                {project.kind === "client" ? t.work.badgeClient : t.work.badgeConcept}
+              </span>
+              {project.clientName ? <small className="work__client">{project.clientName}</small> : null}
+              {project.outcome ? <p className="work__outcome">{project.outcome}</p> : null}
               <a href={project.url} target="_blank" rel="noreferrer">
                 {t.work.open}
                 <ExternalLink size={14} strokeWidth={1.7} />
@@ -328,7 +353,7 @@ export function Work({ t, onStart }) {
 
       <div className="work__nav">
         <div className="work__dots">
-          {projects.map((project, index) => (
+          {ordered.map((project, index) => (
             <button
               type="button"
               key={project.key}
@@ -507,6 +532,7 @@ export function Pricing({ t, onPick }) {
               </div>
 
               <div className="plan__price">{plan.price}</div>
+              {plan.priceNote ? <p className="plan__note">{plan.priceNote}</p> : null}
               <p className="plan__for">{plan.for}</p>
               <p className="plan__desc">{plan.desc}</p>
 
@@ -674,7 +700,16 @@ export function Signals({ t }) {
           <footer>
             <span className="quote__who">
               <b>{review.name}</b>
-              <span>{review.role}</span>
+              <span>
+                {review.role}
+                {review.business ? " · " : ""}
+                {review.business && review.url ? (
+                  <a className="quote__link" href={review.url} target="_blank" rel="noreferrer">
+                    {review.business}
+                    <ExternalLink size={12} strokeWidth={1.8} />
+                  </a>
+                ) : review.business}
+              </span>
             </span>
             <span className="quote__nav">
               <span className="dots">
@@ -758,7 +793,7 @@ export function Faq({ t, onStart }) {
    10 — LAUNCH
    ================================================================== */
 
-export function Launch({ t, onStart, email }) {
+export function Launch({ t, onStart, email, booking }) {
   return (
     <section className="chapter launch wrap" id="launch" data-depth="1">
       <span className="launch__kicker" data-reveal="lift">{t.launch.kicker}</span>
@@ -770,6 +805,13 @@ export function Launch({ t, onStart, email }) {
         <Btn variant="primary" size="lg" onClick={onStart} data-cursor="START">
           {t.launch.button}
         </Btn>
+        {/* A calendar asks for one click; a form asks the visitor to compose
+            an email. Set contact.booking and this appears everywhere. */}
+        {booking ? (
+          <Btn variant="ghost" size="lg" href={booking} icon={false} data-cursor="BOOK">
+            {t.launch.booking}
+          </Btn>
+        ) : null}
         <Btn variant="quiet" href={`mailto:${email}`} icon={false} magnetic={false}>
           {t.launch.secondary}
           <ArrowUpRight size={15} strokeWidth={1.8} />
